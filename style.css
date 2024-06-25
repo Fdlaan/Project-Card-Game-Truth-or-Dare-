@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: beige;
+}
+
+.title {
+    width: 200px;
+    display: flex;
+    position: absolute;
+    top: 150px;
+}
+
+h1 {
+    font-size: 72px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.button {
+    display: flex;
+    position: absolute;
+    bottom: 150px;
+}
+
+button {
+    width: 350px;
+    height: 100px;
+}
+
+p {
+    position: relative;
+    color: black;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 32px;
+}
