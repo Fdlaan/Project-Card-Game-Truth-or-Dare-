@@ -10,7 +10,8 @@ body {
     background: white;
 }
 
-nav{
+nav {
+    position: absolute;
     background-color: rgb(220, 215, 215); 
     padding: 30px;
     border-radius: 10px;
@@ -51,16 +52,10 @@ nav .tod {
     margin: 20px;
 }
 
-.truth {
-    position: absolute;
-    top: 200px;
-    margin: 55px;
-}
-
-.kartu {
-    position: absolute;
-    top: 350px;
-    right: 800px
+.row {
+    display: flex;
+    position: relative;
+    float: left;
 }
 
 .next p {
@@ -76,4 +71,13 @@ nav .tod {
     right: 25px;
     width: 200px;
     height: 100px;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    float: left;
+    top: 200px;
+    left: 150px;
+    margin: 25px;
 }
