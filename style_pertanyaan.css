@@ -22,6 +22,7 @@ nav {
     height: 150px;
     text-align: center;
     justify-content: center;
+    box-shadow:  0 2px 2px rgba(204, 197, 185, 0.5);
 }
 
 h1 {
@@ -37,6 +38,7 @@ nav .tod {
     right: 680px;
     border-radius: 15px;
     padding-top: 25px;
+    box-shadow:  0 2px 2px rgba(84, 84, 84, 0.7);
 }
 
 .tod a {
@@ -50,6 +52,7 @@ nav .tod {
     padding: 8px;
     border-radius: 10px;
     margin: 20px;
+    box-shadow:  0 2px 2px rgba(204, 197, 185, 0.5);
 }
 
 .row {
@@ -63,6 +66,7 @@ nav .tod {
     font-size: 40px;
     bottom: 5px;
     right: 45px;
+    font-weight: bold;
 }
 
 .next a {
@@ -71,13 +75,15 @@ nav .tod {
     right: 25px;
     width: 200px;
     height: 100px;
+    box-shadow:  0 2px 2px rgba(204, 197, 185, 0.5);
 }
 
 .card {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     float: left;
     top: 200px;
     left: 150px;
     margin: 25px;
+    box-shadow:  0 2px 2px rgba(204, 197, 185, 0.5);
 }

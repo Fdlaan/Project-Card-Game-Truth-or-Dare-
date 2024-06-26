@@ -94,6 +94,12 @@
         </div>
     </div>
 
+    <div class="next">
+        <a href="spin wheel.php" class="btn btn-primary">
+            <p>NEXT</p>
+        </a>
+    </div>
+
 </body>
 
 </html>

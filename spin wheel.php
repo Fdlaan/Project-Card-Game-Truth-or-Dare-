@@ -49,11 +49,11 @@
   <body>
     <div class="wheel-container">
       <div class="input-container">
-        <input type="text" id="itemInput" placeholder="Enter item" />
-        <button class="add-button" id="addButton">Add Item</button>
+        <input type="text" id="itemInput" placeholder="Tambahkan Pemain !" />
+        <button class="add-button" id="addButton">Tambah Pemain</button>
       </div>
       <canvas id="wheel" width="500" height="500"></canvas>
-      <button id="spinButton">Spin</button>
+      <button id="spinButton">Spin!</button>
     </div>
     <script>
       const canvas = document.getElementById("wheel");
@@ -173,7 +173,7 @@
 
       spinButton.addEventListener("click", () => {
         if (segments.length === 0) {
-          alert("Please add items to the wheel first.");
+          alert("Tambahkan Pemain !");
           return;
         }
         spinAngleStart = Math.random() * 10 + 10;
@@ -189,7 +189,7 @@
           itemInput.value = "";
           drawRouletteWheel();
         } else {
-          alert("Please enter an item to add.");
+          alert("Tambahkan Pemain !");
         }
       });
 

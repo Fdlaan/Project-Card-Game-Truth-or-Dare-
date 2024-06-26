@@ -95,7 +95,7 @@
     </div>
 
     <div class="next">
-        <a href="pertanyaan.php" class="btn btn-primary">
+        <a href="spin wheel.php" class="btn btn-primary">
             <p>NEXT</p>
         </a>
     </div>

@@ -21,26 +21,20 @@
             text-align: center;
         }
 
-        .kartu {
-            position: absolute;
-            top: 350px;
-            right: 800px
-        }
-
         h1 {
             position: absolute;
-            top: 10%;
-            left: 45%;
+            top: 8%;
+            left: 44%;
             font-weight: bold;
             margin-bottom: 15px;
         }
 
         a {
-            position: absolute;
-            bottom: 50px;
-            right: 25px;
-            width: 200px;
-            height: 100px;
+            position: relative;
+            width: 350px;
+            top: 170px;
+            left: 400px;
+            margin: 55px;
         }
 
         .next p {
@@ -49,44 +43,36 @@
             bottom: 5px;
             right: 45px;
         }
+
+        img {
+            border-radius: 35px;
+            border: 3px solid black;
+            box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+        }
     </style>
 </head>
 
 <body>
 
     <nav>
-        <h1 style="margin-top: 15px">Pilih Kartu !</h1>
+        <h1 style="margin-top: 15px">PILIH KARTU</h1>
     </nav>
 
-    <div class="kartu">
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
+    <a href="pertanyaan.php">
+        <div class="card text-bg-dark">
+            <img src="assets/1.png" class="card-img" alt="Cover Kartu 1">
+            <div class="card-img-overlay">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div>
+    </a>
 
-    <div class="next">
-        <a href="pertanyaan.php" class="btn btn-primary">
-            <p>NEXT</p>
-        </a>
-    </div>
+    <a href="pertanyaan.php">
+        <div class="card text-bg-dark">
+            <img src="assets/langit1.png" class="card-img" alt="Cover Kartu 1">
+            <div class="card-img-overlay">
+            </div>
+        </div>
+    </a>
 
 </body>
 
