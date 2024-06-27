@@ -67,6 +67,8 @@
     <p id="selectedPlayer"></p>
     <button id="truthButton">Truth</button>
     <button id="dareButton">Dare</button>
+    <p id="truthDareQuestion"></p>
+    <button id="okButton" style="display:none;">OK</button>
   </div>
   <script>
     const canvas = document.getElementById("wheel");
@@ -78,6 +80,8 @@
     const selectedPlayer = document.getElementById("selectedPlayer");
     const truthButton = document.getElementById("truthButton");
     const dareButton = document.getElementById("dareButton");
+    const truthDareQuestion = document.getElementById("truthDareQuestion");
+    const okButton = document.getElementById("okButton");
 
     let segments = [];
     const colors = [
@@ -92,6 +96,24 @@
     let spinAngleStart = 10;
     let spinTime = 40;
     let spinTimeTotal = 40;
+
+    const truthQuestions = [
+      "What is your biggest fear?",
+      "What is your most embarrassing moment?",
+      "What is the biggest lie you have ever told?",
+      "Who is your secret crush?",
+      "What is one thing you have never told anyone?"
+    ];
+
+    const dareChallenges = [
+      "Do 20 pushups.",
+      "Sing a song loudly.",
+      "Dance like a crazy person.",
+      "Do an impression of someone until another player can guess who you are.",
+      "Let another player tickle you."
+    ];
+
+    const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
     const drawRouletteWheel = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -209,13 +231,25 @@
     });
 
     truthButton.addEventListener("click", () => {
-      alert("You selected Truth!");
-      modal.style.display = "none";
+      truthDareQuestion.textContent = getRandomItem(truthQuestions);
+      truthButton.style.display = "none";
+      dareButton.style.display = "none";
+      okButton.style.display = "block";
     });
 
     dareButton.addEventListener("click", () => {
-      alert("You selected Dare!");
+      truthDareQuestion.textContent = getRandomItem(dareChallenges);
+      truthButton.style.display = "none";
+      dareButton.style.display = "none";
+      okButton.style.display = "block";
+    });
+
+    okButton.addEventListener("click", () => {
       modal.style.display = "none";
+      truthDareQuestion.textContent = "";
+      truthButton.style.display = "inline-block";
+      dareButton.style.display = "inline-block";
+      okButton.style.display = "none";
     });
 
     drawRouletteWheel();
