@@ -44,6 +44,21 @@
         font-size: 16px;
         cursor: pointer;
       }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .modal button {
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
@@ -55,12 +70,21 @@
       <canvas id="wheel" width="500" height="500"></canvas>
       <button id="spinButton">Spin!</button>
     </div>
+    <div class="modal" id="modal">
+      <p id="selectedPlayer"></p>
+      <button id="truthButton">Truth</button>
+      <button id="dareButton">Dare</button>
+    </div>
     <script>
       const canvas = document.getElementById("wheel");
       const ctx = canvas.getContext("2d");
       const spinButton = document.getElementById("spinButton");
       const addButton = document.getElementById("addButton");
       const itemInput = document.getElementById("itemInput");
+      const modal = document.getElementById("modal");
+      const selectedPlayer = document.getElementById("selectedPlayer");
+      const truthButton = document.getElementById("truthButton");
+      const dareButton = document.getElementById("dareButton");
 
       let segments = [];
       const colors = [
@@ -107,7 +131,6 @@
         } else {
           arc = Math.PI / (segments.length / 2);
 
-
           segments.forEach((segment, i) => {
             const angle = startAngle + i * arc;
             ctx.fillStyle = colors[i % colors.length];
@@ -127,7 +150,6 @@
             ctx.restore();
           });
 
-          
           // Arrow
           ctx.fillStyle = "black";
           ctx.beginPath();
@@ -162,7 +184,10 @@
         const degrees = (startAngle * 180) / Math.PI + 90;
         const arcd = (arc * 180) / Math.PI;
         const index = Math.floor((360 - (degrees % 360)) / arcd);
-        alert("You got " + segments[index]);
+        const selectedSegment = segments[index];
+        alert("You got " + selectedSegment);
+        selectedPlayer.textContent = `Player: ${selectedSegment}`;
+        modal.style.display = "block";
       };
 
       const easeOut = (t, b, c, d) => {
@@ -179,6 +204,7 @@
         spinAngleStart = Math.random() * 10 + 10;
         spinTime = 0;
         spinTimeTotal = Math.random() * 3 + 4 * 1000;
+        modal.style.display = "none";
         rotateWheel();
       });
 
@@ -191,6 +217,16 @@
         } else {
           alert("Tambahkan Pemain !");
         }
+      });
+
+      truthButton.addEventListener("click", () => {
+        alert("You selected Truth!");
+        modal.style.display = "none";
+      });
+
+      dareButton.addEventListener("click", () => {
+        alert("You selected Dare!");
+        modal.style.display = "none";
       });
 
       drawRouletteWheel();
