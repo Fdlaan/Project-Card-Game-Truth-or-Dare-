@@ -184,10 +184,14 @@
         const degrees = (startAngle * 180) / Math.PI + 90;
         const arcd = (arc * 180) / Math.PI;
         const index = Math.floor((360 - (degrees % 360)) / arcd);
+<<<<<<< Updated upstream
         const selectedSegment = segments[index];
         alert("You got " + selectedSegment);
         selectedPlayer.textContent = `Player: ${selectedSegment}`;
         modal.style.display = "block";
+=======
+        alert("Sekarang adalah giliran :  " + segments[index]);
+>>>>>>> Stashed changes
       };
 
       const easeOut = (t, b, c, d) => {

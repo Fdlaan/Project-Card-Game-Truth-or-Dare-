@@ -13,6 +13,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+            font-size: 1vw;
         }
 
         body {
@@ -31,7 +32,7 @@
 
         a {
             position: relative;
-            width: 350px;
+            max-width: 350px;
             top: 170px;
             left: 400px;
             margin: 55px;
@@ -45,7 +46,6 @@
         }
 
         img {
-            border-radius: 35px;
             border: 3px solid black;
             box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
         }

@@ -11,8 +11,8 @@
     <img src="assets/title.png" alt="gambar title">
 
     <div class="button">
-        <form action="pemain.php">
-            <button onclick="window.location.href = 'pemain.php';" type="button" class="btn btn-primary btn-lg"><p>START GAME</p></button>
+        <form action="pertanyaan.php">
+            <button onclick="window.location.href = 'pertanyaan.php';" type="button" class="btn btn-primary btn-lg"><p>START GAME</p></button>
         </form>
     </div>
 </body>

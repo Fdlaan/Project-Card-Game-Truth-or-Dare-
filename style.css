@@ -11,13 +11,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: rgb(145, 19, 203);
-}
-
-.title {
-    width: 200px;
-    display: flex;
-    position: absolute;
-    top: 150px;
+    font-size: 1vw;
 }
 
 .button {
@@ -27,7 +21,7 @@ body {
 }
 
 button {
-    width: 350px;
+    width: 50vw;
     height: 100px;
 }
 
