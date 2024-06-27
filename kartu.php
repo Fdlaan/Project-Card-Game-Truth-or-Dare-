@@ -30,13 +30,14 @@
             position: relative;
             font-weight: bold;
             flex-direction: column;
-            background-color: magenta;
+            background-color: mediumpurple;
             border: 2px solid black;
+            max-height: 100%;
         }
 
         h1 {
             position: relative;
-            top: 370px;
+            padding-block: 50%;
             font-weight: bold;
             text-align: center;
         }
@@ -45,9 +46,7 @@
             display: flex;
             flex-direction: row;
             position: relative;
-            width: 100%;
             max-width: 500px;
-            height: auto;
             margin: 55px;
         }
 
