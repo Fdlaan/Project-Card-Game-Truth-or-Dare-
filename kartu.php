@@ -17,7 +17,6 @@
         }
 
         body {
-            display: flex;
             background: white;
             text-align: center;
             background-image: url("assets/bg.png");
@@ -33,7 +32,6 @@
             flex-direction: column;
             background-color: magenta;
             border: 2px solid black;
-            height: 100%;
         }
 
         h1 {
