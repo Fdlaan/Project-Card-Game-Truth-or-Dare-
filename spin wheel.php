@@ -65,8 +65,13 @@
       text-decoration: none;
       font-weight: bold;
       color: black;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 50px;
     }
   </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -272,7 +277,6 @@
     drawRouletteWheel();
   </script>
 
-  <button><a href="title.php">EXIT</a></button>
+  <a href="title.php"><i class="bi bi-x-circle"></i></a>
 </body>
-
 </html>
