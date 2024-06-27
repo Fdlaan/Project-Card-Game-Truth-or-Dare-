@@ -97,20 +97,22 @@
     let spinTime = 40;
     let spinTimeTotal = 40;
 
+    //pertanyaan truth
     const truthQuestions = [
-      "What is your biggest fear?",
-      "What is your most embarrassing moment?",
-      "What is the biggest lie you have ever told?",
-      "Who is your secret crush?",
-      "What is one thing you have never told anyone?"
+      "ceritakan pengalaman memalukan yang tidak bisa kamu lupakan?",
+      "jika kamu menemukan uang 100JT dijalan, apa yang akan kamu lakukan?",
+      "sebutkan cinta pertamamu!!",
+      "sebutkan 3 hal yang membuat kamu mudah emosi?",
+      "ceritakan kejadian paling horor, mistis yang pernah kamu alami?"
     ];
 
+    //pertanyaan dare
     const dareChallenges = [
-      "Do 20 pushups.",
-      "Sing a song loudly.",
-      "Dance like a crazy person.",
-      "Do an impression of someone until another player can guess who you are.",
-      "Let another player tickle you."
+      "buat suara bebek, tiap 1 menit sekali selama 10 menit",
+      "selfie dengan hewan apapun yang ada di sekitarmu , kemudian upload di sosmed!.",
+      "ganti foto profil kamu dengan pemain yang berada duduk di sebelahkananmu!.",
+      "ajak 3 orang berkenalan yang tidak kamu kenal yang berada di sekitarmu!.",
+      "bicara hanya menggunakan huruf o selama 10 menit."
     ];
 
     const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
