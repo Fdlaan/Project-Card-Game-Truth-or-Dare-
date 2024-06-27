@@ -194,6 +194,10 @@
     });
 
     addButton.addEventListener("click", () => {
+      if (segments.length >= 5) {
+        alert("Maksimal hanya 5 pemain saja!");
+        return;
+      }
       const newItem = itemInput.value.trim();
       if (newItem) {
         segments.push(newItem);
