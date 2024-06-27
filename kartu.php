@@ -13,41 +13,46 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 1vw;
+            min-height: 100vh;
+            font-size: 2vw;
         }
 
         body {
             display: flex;
             background: white;
             text-align: center;
+            width: 100%;
+            height: 100%;
         }
 
         h1 {
-            position: absolute;
-            top: 8%;
-            left: 44%;
+            position: relative;
+            display: flex;
             font-weight: bold;
+            padding-top: 25px;
             margin-bottom: 15px;
         }
 
         a {
             position: relative;
-            max-width: 350px;
-            top: 170px;
-            left: 400px;
+            width: 20vw;
+            top: 20vh;
+            left: -7vw;
             margin: 55px;
-        }
-
-        .next p {
-            position: absolute;
-            font-size: 40px;
-            bottom: 5px;
-            right: 45px;
+            float: left;
         }
 
         img {
             border: 3px solid black;
             box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+        }
+
+        nav {
+            position: relative;
+            float: left;
+            width: fit-content;
+            height: 10vh;
+            left: 35vw;
         }
     </style>
 </head>
