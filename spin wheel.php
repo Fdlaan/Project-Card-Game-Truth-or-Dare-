@@ -256,5 +256,6 @@
 
     drawRouletteWheel();
   </script>
+        <button><a href="title.php">EXIT</a></button>
 </body>
 </html>
