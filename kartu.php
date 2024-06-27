@@ -24,6 +24,8 @@
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
+            min-height: 606px;
+            min-width: 1046px;
         }
 
         .kartu {
@@ -33,6 +35,7 @@
             background-color: mediumpurple;
             border: 2px solid black;
             max-height: 100%;
+            max-width: 100%;
         }
 
         h1 {
@@ -40,6 +43,7 @@
             padding-block: 50%;
             font-weight: bold;
             text-align: center;
+            background-color: palevioletred;
         }
 
         a {
