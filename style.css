@@ -41,4 +41,5 @@ img {
     position: absolute;
     width: auto;
     height: 60vh;
+    border-radius: 50px;
 }

@@ -30,13 +30,17 @@
         .kartu {
             position: relative;
             font-weight: bold;
-            height: 300px;
             flex-direction: column;
-            float: left;
+            background-color: magenta;
+            border: 2px solid black;
+            height: 100%;
         }
 
         h1 {
+            position: relative;
+            top: 370px;
             font-weight: bold;
+            text-align: center;
         }
 
         a {
@@ -57,16 +61,7 @@
         .flex-container {
             display: flex;
             justify-content: center;
-            flex-direction: column;
             text-align: center;
-        }
-
-        .flex-item-left {
-            flex-direction: row;
-        }
-
-        .flex-item-right {
-            flex-direction: row;
         }
     </style>
 </head>

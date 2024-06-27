@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,32 +14,38 @@
       margin: 0;
       background-color: #f0f0f0;
     }
+
     .wheel-container {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     button {
       margin-top: 20px;
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
     }
+
     .input-container {
       margin-bottom: 20px;
       display: flex;
       flex-direction: row;
     }
+
     input {
       padding: 10px;
       font-size: 16px;
     }
+
     .add-button {
       margin-left: 10px;
       padding: 10px;
       font-size: 16px;
       cursor: pointer;
     }
+
     .modal {
       display: none;
       position: fixed;
@@ -49,11 +56,19 @@
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
     .modal button {
       margin: 10px;
     }
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
   </style>
 </head>
+
 <body>
   <div class="wheel-container">
     <div class="input-container">
@@ -256,6 +271,8 @@
 
     drawRouletteWheel();
   </script>
-        <button><a href="title.php">EXIT</a></button>
+
+  <button><a href="title.php">EXIT</a></button>
 </body>
+
 </html>
