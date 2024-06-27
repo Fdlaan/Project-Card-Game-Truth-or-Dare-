@@ -13,7 +13,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
-            min-height: 100vh;
             font-size: 2vw;
         }
 
@@ -21,25 +20,33 @@
             display: flex;
             background: white;
             text-align: center;
-            width: 100%;
-            height: 100%;
+            background-image: url("assets/bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .kartu {
+            position: relative;
+            font-weight: bold;
+            height: 300px;
+            flex-direction: column;
+            float: left;
         }
 
         h1 {
-            position: relative;
-            display: flex;
             font-weight: bold;
-            padding-top: 25px;
-            margin-bottom: 15px;
         }
 
         a {
+            display: flex;
+            flex-direction: row;
             position: relative;
-            width: 20vw;
-            top: 20vh;
-            left: -7vw;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
             margin: 55px;
-            float: left;
         }
 
         img {
@@ -47,37 +54,51 @@
             box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
         }
 
-        nav {
-            position: relative;
-            float: left;
-            width: fit-content;
-            height: 10vh;
-            left: 35vw;
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .flex-item-left {
+            flex-direction: row;
+        }
+
+        .flex-item-right {
+            flex-direction: row;
         }
     </style>
 </head>
 
 <body>
 
-    <nav>
-        <h1 style="margin-top: 15px">PILIH KARTU</h1>
-    </nav>
+    <div class="flex-container">
 
-    <a href="pertanyaan.php">
-        <div class="card text-bg-dark">
-            <img src="assets/1.png" class="card-img" alt="Cover Kartu 1">
-            <div class="card-img-overlay">
-            </div>
+        <div class="kartu">
+            <h1 style="margin-top: 15px">PILIH KARTU</h1>
         </div>
-    </a>
 
-    <a href="pertanyaan.php">
-        <div class="card text-bg-dark">
-            <img src="assets/langit1.png" class="card-img" alt="Cover Kartu 1">
-            <div class="card-img-overlay">
-            </div>
+        <div class="flex-item-left">
+            <a href="pertanyaan.php">
+                <div class="card text-bg-dark">
+                    <img src="assets/1.png" class="card-img" alt="Cover Kartu 1">
+                    <div class="card-img-overlay">
+                    </div>
+                </div>
+            </a>
         </div>
-    </a>
+
+        <div class="flex-item-right">
+            <a href="pertanyaan.php">
+                <div class="card text-bg-dark">
+                    <img src="assets/langit1.png" class="card-img" alt="Cover Kartu 1">
+                    <div class="card-img-overlay">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 
 </body>
 
