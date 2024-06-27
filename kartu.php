@@ -34,8 +34,6 @@
             flex-direction: column;
             background-color: mediumpurple;
             border: 2px solid black;
-            max-height: 100%;
-            max-width: 100%;
         }
 
         h1 {
