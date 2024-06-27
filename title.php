@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 <body>
     
-    <div class="title"><h1>Truth OR Dare</h1></div>
+    <img src="assets/title.png" alt="gambar title">
 
     <div class="button">
         <form action="pemain.php">
