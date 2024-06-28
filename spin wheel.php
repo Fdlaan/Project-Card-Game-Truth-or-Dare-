@@ -71,6 +71,12 @@
       right: 15px;
       font-size: 50px;
     }
+
+    .back {
+      position: absolute;
+      top: 15px;
+      left: 75px;
+    }
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
@@ -90,6 +96,9 @@
     <button id="dareButton">Dare</button>
     <p id="truthDareQuestion"></p>
     <button id="okButton" style="display:none;">OK</button>
+  </div>
+  <div class="back">
+    <a href="pertanyaan.php"><i class="bi bi-arrow-left-circle-fill"></i></a>
   </div>
   <script>
     const canvas = document.getElementById("wheel");
