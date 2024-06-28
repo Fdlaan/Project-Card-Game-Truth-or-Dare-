@@ -6,84 +6,137 @@
 }
 
 body {
-    display: flex;
     background: white;
+    padding: 20px;
 }
 
-nav {
-    position: absolute;
-    background-color: rgb(220, 215, 215); 
-    padding: 30px;
+.navbar {
+    background-color: rgb(220, 215, 215);
+    padding: 20px;
     border-radius: 10px;
     font-size: larger;
     font-family: Arial;
     font-weight: bold;
-    width: 100%;
-    height: 150px;
-    text-align: center;
-    justify-content: center;
-    box-shadow:  0 2px 2px rgba(204, 197, 185, 0.5);
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
 }
 
-h1 {
+.navbar .navbar-brand {
     font-weight: bold;
-    margin-bottom: 15px;
 }
 
-nav .tod {
-    position: absolute;
-    background-color: crimson;
-    width: 300px;
-    height: 75px;
-    right: 680px;
-    border-radius: 15px;
-    padding-top: 25px;
-    box-shadow:  0 2px 2px rgba(84, 84, 84, 0.7);
+.navbar .tod {
+    display: flex;
+    gap: 10px;
 }
 
 .tod a {
-    text-align: center;
-    width: 250px;
-    height: 100px;
     text-decoration: none;
     color: black;
     background-color: white;
     border: 1px solid black;
     padding: 8px;
     border-radius: 10px;
-    margin: 20px;
-    box-shadow:  0 2px 2px rgba(204, 197, 185, 0.5);
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+.container {
+    margin-top: 20px;
 }
 
 .row {
     display: flex;
-    position: relative;
-    float: left;
-}
-
-.next p {
-    position: absolute;
-    font-size: 40px;
-    bottom: 5px;
-    right: 45px;
-    font-weight: bold;
-}
-
-.next a {
-    position: absolute;
-    bottom: 50px;
-    right: 25px;
-    width: 200px;
-    height: 100px;
-    box-shadow:  0 2px 2px rgba(204, 197, 185, 0.5);
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card {
-    position: relative;
-    z-index: 0;
-    float: left;
-    top: 200px;
-    left: 150px;
-    margin: 25px;
-    box-shadow:  0 2px 2px rgba(204, 197, 185, 0.5);
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+.next {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.next a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: white;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: rgb(220, 215, 215);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: larger;
+    font-family: Arial;
+    font-weight: bold;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+}
+
+.navbar .tod {
+    display: flex;
+    gap: 10px;
+}
+
+.tod a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+}
+
+.next {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.next a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
 }
