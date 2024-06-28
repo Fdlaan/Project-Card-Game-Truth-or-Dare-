@@ -149,7 +149,7 @@
       "jika kamu bisa kembali ke masa lalu, apa yang ingin kamu perbaiki?",
       "mana yang membuat kamu paling sedih? dibohongi atau ditinggalkan?",
       "dari semua pemain tunjuk 1 orang yang menurut kamu paling gabisa jaga rahasia!",
-      "",
+      "Kalau kamu tiba tiba bisa menghilang, apakah hal pertama yang akan kamu lakukan?",
     ];
 
     //pertanyaan dare
@@ -174,6 +174,7 @@
       "sebutkan 5 penyanyi indonesia yang namanya berawalan dari huruf A (waktunya hanya 15 detik)",
       "lari di tempat sampai melewati giliran 3 pemain",
       "stand up comedy di depan pemain lain sampai ada yang tertawa!",
+      "Tiru salah satu foto yang ada di media sosialmu secara acak!",
     ];
 
     const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
