@@ -18,14 +18,11 @@
 
         body {
             background: white;
-            text-align: center;
             background-image: url("assets/bg.png");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
-            min-height: 606px;
-            min-width: 1046px;
         }
 
         .kartu {
@@ -34,22 +31,23 @@
             flex-direction: column;
             background-color: mediumpurple;
             border: 2px solid black;
+            overflow: auto;
         }
 
         h1 {
             position: relative;
-            padding-block: 50%;
             font-weight: bold;
-            text-align: center;
-            background-color: palevioletred;
         }
 
         a {
-            display: flex;
-            flex-direction: row;
-            position: relative;
             max-width: 500px;
             margin: 55px;
+        }
+
+        .flexcard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
         }
 
         img {
@@ -58,6 +56,7 @@
         }
 
         .flex-container {
+            flex-direction: column;
             display: flex;
             justify-content: center;
             text-align: center;
@@ -73,7 +72,7 @@
             <h1 style="margin-top: 15px">PILIH KARTU</h1>
         </div>
 
-        <div class="flex-item-left">
+        <div class="flexcard">
             <a href="pertanyaan.php">
                 <div class="card text-bg-dark">
                     <img src="assets/1.png" class="card-img" alt="Cover Kartu 1">
@@ -81,9 +80,7 @@
                     </div>
                 </div>
             </a>
-        </div>
 
-        <div class="flex-item-right">
             <a href="pertanyaan.php">
                 <div class="card text-bg-dark">
                     <img src="assets/langit1.png" class="card-img" alt="Cover Kartu 1">
