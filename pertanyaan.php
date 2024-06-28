@@ -15,9 +15,9 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-           <div class="kembali">
-           <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
-           </div>
+            <div class="kembali">
+                <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
+            </div>
             <a class="navbar-brand" href="#">Daftar Pertanyaan</a>
             <div class="tod">
                 <a href="#" class="btn btn-light">Truth</a>
@@ -185,7 +185,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Mana yang membuat kamu paling sedih? dibohongi atau ditinggalkan?p>
+                        <p class="card-text">Mana yang membuat kamu paling sedih? dibohongi atau ditinggalkan?</p>
                     </div>
                 </div>
             </div>
