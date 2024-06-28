@@ -73,7 +73,7 @@
 
     .back {
       position: absolute;
-      top: 4px;
+      top: 2px;
       left: 75px;
     }
   </style>
