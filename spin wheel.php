@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,7 +124,23 @@
       "jika kamu menemukan uang 100JT dijalan, apa yang akan kamu lakukan?",
       "sebutkan cinta pertamamu!!",
       "sebutkan 3 hal yang membuat kamu mudah emosi?",
-      "ceritakan kejadian paling horor, mistis yang pernah kamu alami?"
+      "ceritakan kejadian paling horor, mistis yang pernah kamu alami?",
+      "tunjuk 1 pemain yang menurutmu lebih cantik/ ganteng dari kamu!",
+      "jika kamu bisa pergi nge-date dengan artis idolamu, siapa artis yang akan kamu pilih?",
+      "ceritakan mimpi yang paling aneh dan konyol yang pernah kamu alami",
+      "ceritakan pengalaman paling memalukan yang tidak bisa kamu lupakan sampai sekarang!",
+      "sebutkan nama cinta monyet pertamamu!",
+      "kira-kira berapa lama kamu mampu bertahan tanpa memegang ponsel?",
+      "sebutkan 5 tipe ideal untuk menjadi pasanganmu!",
+      "ceritakan moment lucu masa kecil kamu yang tidak bisa kamu lupakan! ",
+      "sebutkan 5 hal yang membuat kamu takut!",
+      "sebutkan negara yang ingin kamu kunjungi jika punya banyak uang!",
+      "ceritakan moment paling bahagia yang membuat kamu ingin mengulangnya",
+      "apakah kamu pernah merasa insecure?, saat apakah itu?",
+      "jika kamu bisa kembali ke masa lalu, apa yang ingin kamu perbaiki?",
+      "mana yang membuat kamu paling sedih? dibohongi atau ditinggalkan?",
+      "dari semua pemain tunjuk 1 orang yang menurut kamu paling gabisa jaga rahasia!",
+      "",
     ];
 
     //pertanyaan dare
@@ -132,7 +149,22 @@
       "selfie dengan hewan apapun yang ada di sekitarmu , kemudian upload di sosmed!.",
       "ganti foto profil kamu dengan pemain yang berada duduk di sebelahkananmu!.",
       "ajak 3 orang berkenalan yang tidak kamu kenal yang berada di sekitarmu!.",
-      "bicara hanya menggunakan huruf o selama 10 menit."
+      "bicara hanya menggunakan huruf o selama 10 menit.",
+      "joget tiktok dengan lagu/trend yang lagi viral.",
+      "tetap dalam posisi berdiri sampai melewati giliran 5 orang pemain",
+      "ambil beras 1 sendok makan lalu hitung jumlah butirnya dalam waktu 3 menit",
+      "dalam waktu 30 detik, menangislah sampai bisa mengeluarkan air mata",
+      "ganti foto profil WA kamu dengan foto pemain yang duduk di sebelah kiri kamu! (pertakankan selama 24 jam)",
+      "stel lagu dangdut, lalu joget sampai melewati giliran 3 pemain",
+      "gambar LOVE di jidat kamu menggunakan lipstik atau spidol, dan jangan di hapus sampai permainan berakhir",
+      "ambil salah satu foto pemain, dan jadikan story IG/WA dengan caption 'kesayanganku'!",
+      "genggam tangan pemain lain yang ada di sebelah kananmu sampai melewati giliran 3 pemain",
+      "cari lalu selfie dengan benda apapun yang berwarna ungu yang berada di sekitarmu (waktunya hanya 30 detik, lalu upload di sosmed kamu)",
+      "ajak tos 3 orang yang tidak kamu kenal yang berada di sekitarmu!",
+      "pasang status WA dengan lirik lagu kangen band yang berjudul pujaan hati (bagian reff nya saja)",
+      "sebutkan 5 penyanyi indonesia yang namanya berawalan dari huruf A (waktunya hanya 15 detik)",
+      "lari di tempat sampai melewati giliran 3 pemain",
+      "stand up comedy di depan pemain lain sampai ada yang tertawa!",
     ];
 
     const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
