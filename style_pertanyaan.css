@@ -140,3 +140,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
 }
+
+.kembali{
+    position: absolute;
+    top: 15px;
+    left: 75px;
+}

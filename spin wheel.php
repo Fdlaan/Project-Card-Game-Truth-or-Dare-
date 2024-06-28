@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,9 +122,9 @@
     let arc = 0;
     let spinTimeout = null;
 
-    let spinAngleStart = 10;
-    let spinTime = 40;
-    let spinTimeTotal = 40;
+    let spinAngleStart = 50; // Sudut putaran awal yang lebih besar
+    let spinTime = 5;
+    let spinTimeTotal = 2000; // Waktu putaran total yang lebih cepat
 
     //pertanyaan truth
     const truthQuestions = [
@@ -274,7 +273,7 @@
       }
       spinAngleStart = Math.random() * 10 + 10;
       spinTime = 0;
-      spinTimeTotal = Math.random() * 3 + 4 * 1000;
+      spinTimeTotal = Math.random() * 3 + 2 * 1000; // Mempercepat waktu putaran total
       modal.style.display = "none";
       rotateWheel();
     });
@@ -321,4 +320,5 @@
 
   <a href="title.php"><i class="bi bi-x-circle"></i></a>
 </body>
+
 </html>

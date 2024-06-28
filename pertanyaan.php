@@ -7,6 +7,7 @@
     <title>Daftar Pertanyaan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pertanyaan.css">
 </head>
 
@@ -14,6 +15,9 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
+           <div class="kembali">
+           <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
+           </div>
             <a class="navbar-brand" href="#">Daftar Pertanyaan</a>
             <div class="tod">
                 <a href="#" class="btn btn-light">Truth</a>
@@ -28,8 +32,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Ceritakan pengalaman memalukan yang tidak bisa kamu lupakan?</p>
                     </div>
                 </div>
             </div>
@@ -38,8 +41,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Jika kamu menemukan uang 100JT di jalan, apa yang kamu lakukan?</p>
                     </div>
                 </div>
             </div>
@@ -47,8 +49,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Sebutkan cinta pertamamu!!</p>
                     </div>
                 </div>
             </div>
@@ -56,8 +57,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Sebutkan 3 hal yang membuat kamu mudah emosi?</p>
                     </div>
                 </div>
             </div>
@@ -65,8 +65,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Ceritakan kejadian paling horor, mistis yang perah kamu alami</p>
                     </div>
                 </div>
             </div>
@@ -74,8 +73,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Tunjuk 1 permainan yang  menurutmu lebih cantuik/ ganteng dari kamu!</p>
                     </div>
                 </div>
             </div>
@@ -83,8 +81,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Jika kamu bisa pergi nge-date dengan artis idolamu, siapa artis yang akan kamu pilih?</p>
                     </div>
                 </div>
             </div>
@@ -92,8 +89,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Ceritakan mimpi yang paling aneh dan konyol yang pernah kamu alami</p>
                     </div>
                 </div>
             </div>
@@ -101,8 +97,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Ceritakan pengalaman paling memalukan yang tidak bisa kamu lupakan sampai sekarang!</p>
                     </div>
                 </div>
             </div>
@@ -110,8 +105,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Sebutkan nama cinta monyet pertamamu!</p>
                     </div>
                 </div>
             </div>
@@ -119,8 +113,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Kira-kira berapa lama kamu mampu bertahan tanpa memegang ponsel?</p>
                     </div>
                 </div>
             </div>
@@ -128,8 +121,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Sebutkan 5 tipe ideal untuk menjadi pasanganmu!</p>
                     </div>
                 </div>
             </div>
@@ -137,8 +129,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Ceritakan moment lucu masa kecil kamu yang tidak bisa kamu lupakan!</p>
                     </div>
                 </div>
             </div>
@@ -146,8 +137,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Sebutkan 5 hal yang membuat kamu takut!</p>
                     </div>
                 </div>
             </div>
@@ -155,8 +145,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Sebutkan negara yang ingin kamu kunjungi jika punya banyak uang!</p>
                     </div>
                 </div>
             </div>
@@ -164,8 +153,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Ceritakan moment paling bahagia yang membuat kamu ingin mengulangnya</p>
                     </div>
                 </div>
             </div>
@@ -173,8 +161,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Apakah kamu pernah merasa insecure?, saat apakah itu?</p>
                     </div>
                 </div>
             </div>
@@ -182,8 +169,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Jika kamu bisa kembali ke masa lalu, apa yang ingin kamu perbaiki?</p>
                     </div>
                 </div>
             </div>
@@ -191,8 +177,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Dari semua pemain tunjuk 1 orang yang menurut kamu paling gabisa jaga rahasia!</p>
                     </div>
                 </div>
             </div>
@@ -200,8 +185,15 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
+                        <p class="card-text">Mana yang membuat kamu paling sedih? dibohongi atau ditinggalkan?p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-bg-light">
+                    <div class="card-header">Truth</div>
+                    <div class="card-body">
+                        <p class="card-text">Kalau kamu tiba tiba bisa menghilang, apakah hal pertama yang akan kamu lakukan?</p>
                     </div>
                 </div>
             </div>
