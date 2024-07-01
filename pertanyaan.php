@@ -3,7 +3,7 @@ session_start();
 if (isset($_GET['image'])) {
     $_SESSION['background_image'] = htmlspecialchars($_GET['image']);
 }
-$image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'default.png';
+$image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'bg1.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +86,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
-                        <p class="card-text">Tunjuk 1 permainan yang  menurutmu lebih cantuik/ ganteng dari kamu!</p>
+                        <p class="card-text">Tunjuk 1 permainan yang  menurutmu lebih cantik/ganteng dari kamu!</p>
                     </div>
                 </div>
             </div>
@@ -218,6 +218,5 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             NEXT
         </a>
     </div>
-
 </body>
 </html>
