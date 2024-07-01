@@ -24,26 +24,23 @@
         }
 
         body {
-            background: white;
-            background-image: url("assets/bg.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(180deg, rgba(7, 5, 137, 0.75) 0%, rgba(28, 234, 248, 0.75) 100%);
+            ;
         }
 
         .kartu {
             position: relative;
             font-weight: bold;
             flex-direction: column;
-            background-color: mediumpurple;
-            border: 2px solid black;
+            background: linear-gradient(180deg, rgba(7, 5, 137, 0.75) 0%, rgba(28, 234, 248, 0.75) 100%);
+            box-shadow: 0 2px 2px rgba(28, 234, 248, 0.75);
             overflow: auto;
         }
 
         h1 {
             position: relative;
             font-weight: bold;
+            color: white;
         }
 
         a {
