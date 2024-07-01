@@ -84,7 +84,7 @@
     a {
       text-decoration: none;
       font-weight: bold;
-      color: black;
+      color: #0071BC;
       position: absolute;
       top: 10px;
       right: 15px;
@@ -109,10 +109,6 @@
     .wheel-container button {
       border-radius: 15px;
       font-weight: bold;
-    }
-
-    .back a {
-      color: white;
     }
 
     .modal {
