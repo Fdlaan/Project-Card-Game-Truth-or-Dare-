@@ -287,7 +287,7 @@
       }
       spinAngleStart = Math.random() * 10 + 10;
       spinTime = 0;
-      spinTimeTotal = Math.random() * 3 + 2 * 1000; // Mempercepat waktu putaran total
+      spinTimeTotal = Math.random() * 15 + 14 * 1000; // Mempercepat waktu putaran total
       modal.style.display = "none";
       rotateWheel();
     });
