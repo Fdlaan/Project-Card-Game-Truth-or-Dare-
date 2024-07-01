@@ -90,6 +90,39 @@
       top: 2px;
       left: 75px;
     }
+
+    .input-container input {
+      border-radius: 15px;
+    }
+
+    .input-container button {
+      border-radius: 15px;
+      font-weight: bold;
+    }
+
+    .wheel-container button {
+      border-radius: 15px;
+      font-weight: bold;
+    }
+
+    .back a {
+      color: white;
+    }
+
+    .modal {
+      border-radius: 15px;
+      background: linear-gradient(180deg, rgba(7, 5, 137, 1) 0%, rgba(28, 234, 248, 1) 100%);
+    }
+
+    .modal p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: white;
+    }
+
+    .modal button {
+      border-radius: 15px;
+    }
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
