@@ -1,6 +1,12 @@
+<?php
+session_start();
+if (isset($_GET['image'])) {
+    $_SESSION['background_image'] = htmlspecialchars($_GET['image']);
+}
+$image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'default.png';
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +15,16 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pertanyaan.css">
+    <style>
+        body {
+            background-image: url('assets/<?php echo $image; ?>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px;
+        }
+    </style>
 </head>
-
 <body>
 
     <nav class="navbar navbar-expand-lg">
@@ -36,7 +50,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light">
                     <div class="card-header">Truth</div>

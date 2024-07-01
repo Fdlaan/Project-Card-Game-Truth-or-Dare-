@@ -97,7 +97,7 @@
     <button id="okButton" style="display:none;">OK</button>
   </div>
   <div class="back">
-    <a href="pertanyaan.php"><i class="bi bi-arrow-left-circle-fill"></i></a>
+    <a href="pertanyaan.php"><i class="bi bi-arrow-left-circle"></i></a>
   </div>
   <script>
     const canvas = document.getElementById("wheel");

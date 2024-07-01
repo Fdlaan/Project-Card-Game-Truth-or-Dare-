@@ -1,3 +1,10 @@
+<?php
+    session_start();
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,7 +80,7 @@
         </div>
 
         <div class="flexcard">
-            <a href="pertanyaan.php">
+            <a href="pertanyaan.php?image=1.png">
                 <div class="card text-bg-dark">
                     <img src="assets/1.png" class="card-img" alt="Cover Kartu 1">
                     <div class="card-img-overlay">
@@ -81,7 +88,7 @@
                 </div>
             </a>
 
-            <a href="pertanyaan.php">
+            <a href="pertanyaan.php?image=langit1.png">
                 <div class="card text-bg-dark">
                     <img src="assets/langit1.png" class="card-img" alt="Cover Kartu 1">
                     <div class="card-img-overlay">
