@@ -8,10 +8,8 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,6 +73,14 @@
       margin: 10px;
     }
 
+    .scoreboard {
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 5px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
     a {
       text-decoration: none;
       font-weight: bold;
@@ -135,6 +141,10 @@
     </div>
     <canvas id="wheel" width="500" height="500"></canvas>
     <button id="spinButton">Spin!</button>
+    <div class="scoreboard" id="scoreboard">
+      <h3>Scoreboard</h3>
+      <div id="scores"></div>
+    </div>
   </div>
   <div class="modal" id="modal">
     <p id="selectedPlayer"></p>
@@ -158,6 +168,8 @@
     const dareButton = document.getElementById("dareButton");
     const truthDareQuestion = document.getElementById("truthDareQuestion");
     const okButton = document.getElementById("okButton");
+    const scoreboard = document.getElementById("scoreboard");
+    const scoresDiv = document.getElementById("scores");
 
     let segments = [];
     const colors = [
@@ -173,7 +185,8 @@
     let spinTime = 5;
     let spinTimeTotal = 2000; // Waktu putaran total yang lebih cepat
 
-    //pertanyaan truth
+    const scores = {};
+
     const truthQuestions = [
       "ceritakan pengalaman memalukan yang tidak bisa kamu lupakan?",
       "jika kamu menemukan uang 100JT dijalan, apa yang akan kamu lakukan?",
@@ -198,7 +211,6 @@
       "Kalau kamu tiba tiba bisa menghilang, apakah hal pertama yang akan kamu lakukan?",
     ];
 
-    //pertanyaan dare
     const dareChallenges = [
       "buat suara bebek, tiap 1 menit sekali selama 10 menit",
       "selfie dengan hewan apapun yang ada di sekitarmu , kemudian upload di sosmed!.",
@@ -313,6 +325,13 @@
       return b + c * (tc + -3 * ts + 3 * t);
     };
 
+    const updateScores = () => {
+      scoresDiv.innerHTML = "";
+      Object.keys(scores).forEach(player => {
+        scoresDiv.innerHTML += `<p>${player}: Truth - ${scores[player].truth}, Dare - ${scores[player].dare}</p>`;
+      });
+    };
+
     spinButton.addEventListener("click", () => {
       if (segments.length === 0) {
         alert("Tambahkan Pemain!");
@@ -333,25 +352,33 @@
       const newItem = itemInput.value.trim();
       if (newItem) {
         segments.push(newItem);
+        scores[newItem] = { truth: 0, dare: 0 };
         itemInput.value = "";
         drawRouletteWheel();
+        updateScores();
       } else {
         alert("Tambahkan Pemain!");
       }
     });
 
     truthButton.addEventListener("click", () => {
+      const player = selectedPlayer.textContent.split(": ")[1];
+      scores[player].truth += 1;
       truthDareQuestion.textContent = getRandomItem(truthQuestions);
       truthButton.style.display = "none";
       dareButton.style.display = "none";
       okButton.style.display = "block";
+      updateScores();
     });
 
     dareButton.addEventListener("click", () => {
+      const player = selectedPlayer.textContent.split(": ")[1];
+      scores[player].dare += 1;
       truthDareQuestion.textContent = getRandomItem(dareChallenges);
       truthButton.style.display = "none";
       dareButton.style.display = "none";
       okButton.style.display = "block";
+      updateScores();
     });
 
     okButton.addEventListener("click", () => {
@@ -367,5 +394,4 @@
 
   <a href="title.php"><i class="bi bi-x-circle"></i></a>
 </body>
-
 </html>
