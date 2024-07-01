@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if (isset($_GET['image'])) {
+        $_SESSION['background_image'] = htmlspecialchars($_GET['image']);
+    }
+    $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'default.png';
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +23,10 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f0f0f0;
+      background-image: url('assets/<?php echo $image; ?>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .wheel-container {
