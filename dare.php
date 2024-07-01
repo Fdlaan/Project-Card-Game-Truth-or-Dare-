@@ -42,7 +42,7 @@
             <a class="navbar-brand" href="#">Daftar Tantangan</a>
             <div class="tod">
                 <a href="pertanyaan.php" class="btn btn-light">Truth</a>
-                <a href="dare.php" class="btn btn-light">Dare</a>
+                <a href="#" class="btn btn-light">Dare</a>
             </div>
         </div>
     </nav>

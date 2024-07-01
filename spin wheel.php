@@ -90,6 +90,24 @@
       top: 2px;
       left: 75px;
     }
+
+    .input-container input {
+      border-radius: 15px;
+    }
+
+    .input-container button {
+      border-radius: 15px;
+      font-weight: bold;
+    }
+
+    .wheel-container button {
+      border-radius: 15px;
+      font-weight: bold;
+    }
+
+    .back a {
+      color: white;
+    }
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
