@@ -86,6 +86,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       border-radius: 10px;
       text-align: center;
       margin-left: 35px;
+      margin-block: 35%;
       height: fit-content;
     }
 
