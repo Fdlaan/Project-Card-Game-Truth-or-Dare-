@@ -74,6 +74,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       background-color: white;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border: 2px solid white;
     }
 
     .modal button {

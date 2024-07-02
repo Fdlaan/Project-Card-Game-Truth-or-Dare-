@@ -73,7 +73,7 @@
         </div>
 
         <div class="flexcard">
-            <a href="pertanyaan.php?image=bg1.png">
+            <a href="pertanyaan.php?image=bg4.png">
                 <div class="card text-bg-dark">
                     <img src="assets/1.png" class="card-img" alt="Cover Kartu 1">
                     <div class="card-img-overlay">
