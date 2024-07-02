@@ -1,15 +1,14 @@
 <?php
-    session_start();
-    if (isset($_GET['image'])) {
-        $_SESSION['background_image'] = htmlspecialchars($_GET['image']);
-    }
-    $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'default.png';
+session_start();
+if (isset($_GET['image'])) {
+  $_SESSION['background_image'] = htmlspecialchars($_GET['image']);
+}
+$image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'default.png';
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +28,8 @@
 
     .wheel-container {
       display: flex;
-      flex-direction: row; //
-      align-items: flex-start;//
+      flex-direction: row;
+      align-items: flex-start;
     }
 
     .controls-container {
@@ -46,7 +45,7 @@
       font-size: 16px;
       cursor: pointer;
     }
-
+    
     .input-container {
       margin-bottom: 20px;
       display: flex;
@@ -60,6 +59,7 @@
 
     .add-button {
       margin-left: 10px;
+      margin-bottom: 15px;
       padding: 10px;
       font-size: 16px;
       cursor: pointer;
@@ -81,11 +81,12 @@
     }
 
     .scoreboard {
-      margin-top: 20px;
       background-color: rgba(255, 255, 255, 0.8);
       padding: 5px;
       border-radius: 10px;
       text-align: center;
+      margin-left: 35px;
+      height: fit-content;
     }
 
     a {
@@ -120,24 +121,52 @@
 
     .modal {
       border-radius: 15px;
-      background: linear-gradient(180deg, rgba(7, 5, 137, 1) 0%, rgba(28, 234, 248, 1) 100%);
+      background-image: url('assets/<?php echo $image; ?>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .modal p {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
-      color: white;
+      color: #B0BEC5;
     }
 
     .modal button {
       border-radius: 15px;
     }
+
+    .modal #okButton {
+      margin-inline: 40%;
+    }
+
+
+    @media screen and (max-width: 700px) {
+
+      .wheel-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .scoreboard {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+        border-radius: 10px;
+        text-align: center;
+        margin-inline-start: 35%;
+        margin-top: 15px;
+        height: fit-content;
+      }
+    }
   </style>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    rel="stylesheet">
 </head>
 
 <body>
-<div class="wheel-container">
+  <div class="wheel-container">
     <div class="controls-container">
       <div class="input-container">
         <input type="text" id="itemInput" placeholder="Tambahkan Pemain!" />
@@ -400,4 +429,5 @@
 
   <a href="title.php"><i class="bi bi-x-circle"></i></a>
 </body>
+
 </html>
