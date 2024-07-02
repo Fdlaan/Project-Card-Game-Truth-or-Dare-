@@ -29,8 +29,15 @@
 
     .wheel-container {
       display: flex;
+      flex-direction: row; //
+      align-items: flex-start;//
+    }
+
+    .controls-container {
+      display: flex;
       flex-direction: column;
       align-items: center;
+      margin-right: 20px;
     }
 
     button {
@@ -130,13 +137,15 @@
 </head>
 
 <body>
-  <div class="wheel-container">
-    <div class="input-container">
-      <input type="text" id="itemInput" placeholder="Tambahkan Pemain!" />
-      <button class="add-button" id="addButton">Tambah Pemain</button>
+<div class="wheel-container">
+    <div class="controls-container">
+      <div class="input-container">
+        <input type="text" id="itemInput" placeholder="Tambahkan Pemain!" />
+        <button class="add-button" id="addButton">Tambah Pemain</button>
+      </div>
+      <canvas id="wheel" width="500" height="500"></canvas>
+      <button id="spinButton">Spin!</button>
     </div>
-    <canvas id="wheel" width="500" height="500"></canvas>
-    <button id="spinButton">Spin!</button>
     <div class="scoreboard" id="scoreboard">
       <h3>Scoreboard</h3>
       <div id="scores"></div>
@@ -237,6 +246,7 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       if (segments.length === 0) {
+
         // Draw an empty circle
         ctx.fillStyle = "#ddd";
         ctx.beginPath();
@@ -335,7 +345,7 @@
       }
       spinAngleStart = Math.random() * 10 + 10;
       spinTime = 0;
-      spinTimeTotal = Math.random() * 15 + 14 * 1000; // Mempercepat waktu putaran total
+      spinTimeTotal = Math.random() * 12 + 13 * 1000; // Mempercepat waktu putaran total
       modal.style.display = "none";
       rotateWheel();
     });
