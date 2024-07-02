@@ -81,13 +81,20 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     }
 
     .scoreboard {
-      background-color: rgba(255, 255, 255, 0.8);
+      display: none;
+    }
+
+    #scoreboard {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgba(255, 255, 255, 1);
+      border: 2px solid black;
       padding: 5px;
       border-radius: 10px;
       text-align: center;
-      margin-left: 35px;
-      margin-top: 35%;
+      width: 520px;
       height: fit-content;
+      align-content: center;
+      justify-content: center;
     }
 
     a {
@@ -143,7 +150,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     }
 
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1060px) {
 
       .wheel-container {
         display: flex;
@@ -175,6 +182,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       </div>
       <canvas id="wheel" width="500" height="500"></canvas>
       <button id="spinButton">Spin!</button>
+      <button id="showScore">Scoreboard</button>
     </div>
     <div class="scoreboard" id="scoreboard">
       <h3>Scoreboard</h3>
@@ -205,6 +213,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     const okButton = document.getElementById("okButton");
     const scoreboard = document.getElementById("scoreboard");
     const scoresDiv = document.getElementById("scores");
+    const showScore = document.getElementById("showScore");
 
     let segments = [];
     const colors = [
@@ -423,6 +432,10 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       truthButton.style.display = "inline-block";
       dareButton.style.display = "inline-block";
       okButton.style.display = "none";
+    });
+
+    showScore.addEventListener("click", () => {
+      scoreboard.classList.toggle("scoreboard")
     });
 
     drawRouletteWheel();

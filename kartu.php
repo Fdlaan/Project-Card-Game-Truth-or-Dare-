@@ -28,7 +28,7 @@
             position: relative;
             font-weight: bold;
             flex-direction: column;
-            background: linear-gradient(180deg, rgba(7, 5, 137, 0.75) 0%, rgba(28, 234, 248, 0.75) 100%);
+            background: linear-gradient(180deg, rgba(7, 5, 137, 0.75) 0%, rgba(28, 234, 248, 0.5) 100%);
             box-shadow: 0 2px 2px rgba(28, 234, 248, 0.75);
             overflow: auto;
         }
