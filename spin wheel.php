@@ -45,7 +45,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       font-size: 16px;
       cursor: pointer;
     }
-    
+
     .input-container {
       margin-bottom: 20px;
       display: flex;
@@ -91,10 +91,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       padding: 5px;
       border-radius: 10px;
       text-align: center;
-      width: 520px;
       height: fit-content;
-      align-content: center;
-      justify-content: center;
+      margin-top: 20%;
     }
 
     a {
@@ -129,6 +127,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
     .modal {
       border-radius: 15px;
+      width: 500px;
       background-image: url('assets/<?php echo $image; ?>');
       background-size: cover;
       background-repeat: no-repeat;
@@ -136,21 +135,23 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     }
 
     .modal p {
+      text-align: center;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
-      color: #B0BEC5;
+      color: #2D3BB9;
     }
 
     .modal button {
       border-radius: 15px;
+      margin-inline: 43%;
     }
 
     .modal #okButton {
-      margin-inline: 40%;
+      margin-inline: 43%;
     }
 
 
-    @media screen and (max-width: 1060px) {
+    @media screen and (max-width: 850px) {
 
       .wheel-container {
         display: flex;
@@ -158,14 +159,14 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         align-items: flex-start;
       }
 
-      .scoreboard {
+      #scoreboard {
         background-color: rgba(255, 255, 255, 0.8);
         padding: 5px;
         border-radius: 10px;
         text-align: center;
-        margin-inline-start: 35%;
-        margin-top: 15px;
+        margin-top: 10px;
         height: fit-content;
+        width: 520px;
       }
     }
   </style>
