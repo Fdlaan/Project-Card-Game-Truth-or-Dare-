@@ -61,9 +61,10 @@ body {
   border-radius: 10px;
 }
 
-.next {
-  margin-top: 20px;
-  text-align: right;
+.next{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 .next a {

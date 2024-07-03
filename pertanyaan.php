@@ -23,7 +23,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             background-position: center;
             padding: 20px;
         }
-    </style>
+</style>
+
 </head>
 <body>
 
@@ -218,5 +219,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             NEXT
         </a>
     </div>
+
 </body>
 </html>
