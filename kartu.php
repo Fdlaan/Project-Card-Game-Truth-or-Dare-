@@ -101,9 +101,9 @@ session_start();
                 </div>
             </a>
 
-            <a href="pertanyaan.php?image=langit3.png">
+            <a href="pertanyaan.php?image=3.png">
                 <div class="card text-bg-dark">
-                    <img src="assets/langit1.png" class="card-img" alt="Cover Kartu 1">
+                    <img src="assets/2.png" class="card-img" alt="Cover Kartu 1">
                     <div class="card-img-overlay">
                     </div>
                 </div>
