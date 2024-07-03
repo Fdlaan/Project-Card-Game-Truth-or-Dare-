@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -28,25 +28,27 @@
             position: relative;
             font-weight: bold;
             flex-direction: column;
+            text-align: center;
             background: linear-gradient(180deg, rgba(7, 5, 137, 0.75) 0%, rgba(28, 234, 248, 0.5) 100%);
             box-shadow: 0 2px 2px rgba(28, 234, 248, 0.75);
             overflow: auto;
         }
 
         h1 {
-            position: relative;
             font-weight: bold;
             color: white;
+            margin-top: 10px;
+            font-size: 7vw;
         }
 
         a {
-            max-width: 500px;
+            max-width: fit-content;
             margin: 55px;
         }
 
         .flexcard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax());
+            display: flex;
+            flex-direction: row;
             justify-items: center;
         }
 
@@ -61,6 +63,24 @@
             justify-content: center;
             text-align: center;
         }
+
+        @media screen and (max-width: 1066px) {
+
+            .flex-container {
+                flex-direction: column;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .flexcard {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax());
+                flex-direction: column;
+                justify-items: center;
+            }
+
+        }
     </style>
 </head>
 
@@ -69,7 +89,7 @@
     <div class="flex-container">
 
         <div class="kartu">
-            <h1 style="margin-top: 15px">PILIH KARTU</h1>
+            <h1>PILIH KARTU</h1>
         </div>
 
         <div class="flexcard">
