@@ -88,10 +88,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     .modal button {
       margin: 10px;
     }
-    
-    .scoreboard {
-      display: none;
-    }
+
 
     #scoreboard {
       font-family: Arial, Helvetica, sans-serif;
@@ -151,11 +148,25 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       background-position: center;
     }
 
+    .modal .selectedPlayer {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: #fff;
+      background: none;
+    }
+
     .modal p {
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
       color: #fff;
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      padding: 5px;
     }
 
     .modal button {
@@ -167,8 +178,26 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       margin-inline: 43%;
     }
 
+    .owl {
+      position: absolute;
+      display: flex;
+      right: 5px;
+      top: -28px;
+    }
+
+    .owl img {
+      width: 180px;
+    }
+
+    .modal .truthDareQuestion {
+      display: none;
+    }
 
     @media screen and (max-width: 850px) {
+
+      .owl {
+        display: none;
+      }
 
       .wheel-container {
         display: flex;
@@ -203,6 +232,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       <button id="spinButton">Spin!</button>
     </div>
 
+    <div class="owl"><img src="assets/Owl.png" alt="dekor owl"></div>
+
     <div class="scoreboard" id="scoreboard">
       <h3>Scoreboard</h3>
       <div id="scores"></div>
@@ -210,10 +241,10 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
   </div>
 
   <div class="modal" id="modal">
-    <p id="selectedPlayer"></p>
+    <p class="selectedPlayer" id="selectedPlayer"></p>
     <button id="truthButton">Truth</button>
     <button id="dareButton">Dare</button>
-    <p id="truthDareQuestion"></p>
+    <p class="truthDareQuestion" id="truthDareQuestion"></p>
     <button id="okButton" style="display:none;">OK</button>
   </div>
 
@@ -412,8 +443,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     });
 
     addButton.addEventListener("click", () => {
-      scoreboard.classList.remove("scoreboard");
-
       if (segments.length >= 5) {
         alert("Maksimal hanya 5 pemain saja!");
         return;
@@ -437,6 +466,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       truthButton.style.display = "none";
       dareButton.style.display = "none";
       okButton.style.display = "block";
+      truthDareQuestion.classList.remove("truthDareQuestion");
       updateScores();
     });
 
@@ -447,6 +477,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       truthButton.style.display = "none";
       dareButton.style.display = "none";
       okButton.style.display = "block";
+      truthDareQuestion.classList.remove("truthDareQuestion");
       updateScores();
     });
 
@@ -456,6 +487,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       truthButton.style.display = "inline-block";
       dareButton.style.display = "inline-block";
       okButton.style.display = "none";
+      truthDareQuestion.classList.add("truthDareQuestion");
     });
 
     drawRouletteWheel();
