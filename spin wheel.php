@@ -54,7 +54,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     }
 
     .input-container {
-      margin-bottom: 20px;
       display: flex;
       flex-direction: row;
     }
@@ -126,6 +125,14 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     .input-container button {
       border-radius: 15px;
       font-weight: bold;
+      width: max-content;
+      height: 76px;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 10px 20px;
+      font-size: 24px;
+      cursor: pointer;
+      
     }
 
     .wheel-container button {
