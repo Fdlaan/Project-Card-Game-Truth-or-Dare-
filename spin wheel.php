@@ -51,6 +51,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
+      border: 1px solid black;
     }
 
     .input-container {
@@ -61,6 +62,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     input {
       padding: 10px;
       font-size: 16px;
+      border: 1px solid black;
     }
 
     .add-button {
@@ -86,7 +88,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     .modal button {
       margin: 10px;
     }
-
+    
     .scoreboard {
       display: none;
     }
@@ -105,7 +107,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     a {
       text-decoration: none;
       font-weight: bold;
-      color: #0071BC;
+      color: #fff;
       position: absolute;
       top: 10px;
       right: 15px;
@@ -132,7 +134,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       padding: 10px 20px;
       font-size: 24px;
       cursor: pointer;
-      
+
     }
 
     .wheel-container button {
@@ -153,7 +155,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
-      color: #2D3BB9;
+      color: #fff;
     }
 
     .modal button {
@@ -196,15 +198,17 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         <input type="text" id="itemInput" placeholder="Tambahkan Pemain!" />
         <button class="add-button" id="addButton">Tambah Pemain</button>
       </div>
+
       <canvas id="wheel" width="500" height="500"></canvas>
       <button id="spinButton">Spin!</button>
-      <button id="showScore">Scoreboard</button>
     </div>
+
     <div class="scoreboard" id="scoreboard">
       <h3>Scoreboard</h3>
       <div id="scores"></div>
     </div>
   </div>
+
   <div class="modal" id="modal">
     <p id="selectedPlayer"></p>
     <button id="truthButton">Truth</button>
@@ -212,9 +216,11 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     <p id="truthDareQuestion"></p>
     <button id="okButton" style="display:none;">OK</button>
   </div>
+
   <div class="back">
     <a href="pertanyaan.php"><i class="bi bi-arrow-left-circle"></i></a>
   </div>
+
   <script>
     const canvas = document.getElementById("wheel");
     const ctx = canvas.getContext("2d");
@@ -406,6 +412,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     });
 
     addButton.addEventListener("click", () => {
+      scoreboard.classList.remove("scoreboard");
+
       if (segments.length >= 5) {
         alert("Maksimal hanya 5 pemain saja!");
         return;
@@ -448,10 +456,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       truthButton.style.display = "inline-block";
       dareButton.style.display = "inline-block";
       okButton.style.display = "none";
-    });
-
-    showScore.addEventListener("click", () => {
-      scoreboard.classList.toggle("scoreboard")
     });
 
     drawRouletteWheel();
