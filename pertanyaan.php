@@ -32,7 +32,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             <div class="kembali">
                 <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
             </div>
-            <a class="navbar-brand">Daftar Kejujuran</a>
+            <a class="navbar-brand">DAFTAR KEJUJURAN</a>
             <div class="tod">
                 <a href="#" class="btn btn-light">Truth</a>
                 <a href="dare.php" class="btn btn-light">Dare</a>

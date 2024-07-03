@@ -39,7 +39,7 @@
             <div class="kembali">
                 <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
             </div>
-            <a class="navbar-brand" href="#">Daftar Tantangan</a>
+            <a class="navbar-brand" href="#">DAFTAR TANTANGAN</a>
             <div class="tod">
                 <a href="pertanyaan.php" class="btn btn-light">Truth</a>
                 <a href="#" class="btn btn-light">Dare</a>

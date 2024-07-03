@@ -36,7 +36,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       -webkit-backdrop-filter: blur(3px);
       border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.18);
-      padding: 10px;
+      padding: 15px;
     }
 
     .controls-container {
