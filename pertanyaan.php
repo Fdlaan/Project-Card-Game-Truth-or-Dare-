@@ -43,7 +43,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Ceritakan pengalaman memalukan yang tidak bisa kamu lupakan?</p>
@@ -51,7 +51,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Jika kamu menemukan uang 100JT di jalan, apa yang kamu lakukan?</p>
@@ -59,7 +59,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Sebutkan cinta pertamamu!!</p>
@@ -67,7 +67,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Sebutkan 3 hal yang membuat kamu mudah emosi?</p>
@@ -75,7 +75,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Ceritakan kejadian paling horor, mistis yang perah kamu alami</p>
@@ -83,7 +83,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Tunjuk 1 permainan yang  menurutmu lebih cantik/ganteng dari kamu!</p>
@@ -91,7 +91,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Jika kamu bisa pergi nge-date dengan artis idolamu, siapa artis yang akan kamu pilih?</p>
@@ -99,7 +99,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Ceritakan mimpi yang paling aneh dan konyol yang pernah kamu alami</p>
@@ -107,7 +107,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Ceritakan pengalaman paling memalukan yang tidak bisa kamu lupakan sampai sekarang!</p>
@@ -115,7 +115,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Sebutkan nama cinta monyet pertamamu!</p>
@@ -123,7 +123,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Kira-kira berapa lama kamu mampu bertahan tanpa memegang ponsel?</p>
@@ -131,7 +131,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Sebutkan 5 tipe ideal untuk menjadi pasanganmu!</p>
@@ -139,7 +139,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Ceritakan moment lucu masa kecil kamu yang tidak bisa kamu lupakan!</p>
@@ -147,7 +147,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Sebutkan 5 hal yang membuat kamu takut!</p>
@@ -155,7 +155,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Sebutkan negara yang ingin kamu kunjungi jika punya banyak uang!</p>
@@ -163,7 +163,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Ceritakan moment paling bahagia yang membuat kamu ingin mengulangnya</p>
@@ -171,7 +171,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Apakah kamu pernah merasa insecure?, saat apakah itu?</p>
@@ -179,7 +179,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Jika kamu bisa kembali ke masa lalu, apa yang ingin kamu perbaiki?</p>
@@ -187,7 +187,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Dari semua pemain tunjuk 1 orang yang menurut kamu paling gabisa jaga rahasia!</p>
@@ -195,7 +195,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Mana yang membuat kamu paling sedih? dibohongi atau ditinggalkan?</p>
@@ -203,7 +203,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <div class="card text-bg-light">
+                <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
                     <div class="card-body">
                         <p class="card-text">Kalau kamu tiba tiba bisa menghilang, apakah hal pertama yang akan kamu lakukan?</p>
