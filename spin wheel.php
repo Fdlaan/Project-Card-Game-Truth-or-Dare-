@@ -66,10 +66,10 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     }
 
     .add-button {
-      margin-left: 10px;
-      margin-bottom: 15px;
-      padding: 10px;
-      font-size: 16px;
+      margin-left: 15px;
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 15px;
       cursor: pointer;
     }
 
@@ -119,13 +119,15 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
     .input-container input {
       border-radius: 15px;
+      height: 30px;
+    
     }
 
     .input-container button {
       border-radius: 15px;
       font-weight: bold;
       width: max-content;
-      height: 76px;
+      height: 51px;
       margin-top: 0;
       margin-bottom: 0;
       padding: 10px 20px;
