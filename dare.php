@@ -1,10 +1,10 @@
 <?php
-    session_start();
-    if (isset($_GET['image'])) {
-        $_SESSION['background_image'] = htmlspecialchars($_GET['image']);
-    }
+session_start();
+if (isset($_GET['image'])) {
+    $_SESSION['background_image'] = htmlspecialchars($_GET['image']);
+}
 
-    $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'default.png';
+$image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'default.png';
 ?>
 
 
@@ -19,7 +19,8 @@
     <title>Daftar Pertanyaan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <link rel="stylesheet" href="style_pertanyaan.css">
     <style>
         body {
@@ -40,13 +41,13 @@
                 <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
             </div>
             <a class="navbar-brand" href="#">DAFTAR TANTANGAN</a>
-            <div class="tod">
-                <a href="pertanyaan.php" class="btn btn-truth">Truth</a>
-                <a href="#" class="btn btn-dare active">Dare</a>
-            </div>
-
         </div>
     </nav>
+
+    <div class="tod">
+        <a href="pertanyaan.php" class="btn btn-truth">Truth</a>
+        <a href="#" class="btn btn-dare active">Dare</a>
+    </div>
 
     <div class="container mt-5">
         <div class="row">
@@ -63,7 +64,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">Selfie dengan hewan apapun yang ada di sekitarmu, kemudian upload di sosmed!.</p>
+                        <p class="card-text">Selfie dengan hewan apapun yang ada di sekitarmu, kemudian upload di
+                            sosmed!.</p>
                     </div>
                 </div>
             </div>
@@ -81,7 +83,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">ajak 3 orang berkenalan yang tidak kamu kenal yang berada di sekitarmu!.</p>
+                        <p class="card-text">ajak 3 orang berkenalan yang tidak kamu kenal yang berada di sekitarmu!.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -113,7 +116,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">ambil beras 1 sendok makan lalu hitung jumlah butirnya dalam waktu 3 menit</p>
+                        <p class="card-text">ambil beras 1 sendok makan lalu hitung jumlah butirnya dalam waktu 3 menit
+                        </p>
                     </div>
                 </div>
             </div>
@@ -129,7 +133,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">ganti foto profil WA kamu dengan foto pemain yang duduk di sebelah kiri kamu! (pertakankan selama 24 jam)</p>
+                        <p class="card-text">ganti foto profil WA kamu dengan foto pemain yang duduk di sebelah kiri
+                            kamu! (pertakankan selama 24 jam)</p>
                     </div>
                 </div>
             </div>
@@ -145,7 +150,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">gambar LOVE di jidat kamu menggunakan lipstik atau spidol, dan jangan di hapus sampai permainan berakhir</p>
+                        <p class="card-text">gambar LOVE di jidat kamu menggunakan lipstik atau spidol, dan jangan di
+                            hapus sampai permainan berakhir</p>
                     </div>
                 </div>
             </div>
@@ -161,7 +167,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">ambil salah satu foto pemain, dan jadikan story IG/WA dengan caption 'kesayanganku'!</p>
+                        <p class="card-text">ambil salah satu foto pemain, dan jadikan story IG/WA dengan caption
+                            'kesayanganku'!</p>
                     </div>
                 </div>
             </div>
@@ -169,7 +176,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">genggam tangan pemain lain yang ada di sebelah kananmu sampai melewati giliran 3 pemain</p>
+                        <p class="card-text">genggam tangan pemain lain yang ada di sebelah kananmu sampai melewati
+                            giliran 3 pemain</p>
                     </div>
                 </div>
             </div>
@@ -177,7 +185,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">cari lalu selfie dengan benda apapun yang berwarna ungu yang berada di sekitarmu (waktunya hanya 30 detik, lalu upload di sosmed kamu)</p>
+                        <p class="card-text">cari lalu selfie dengan benda apapun yang berwarna ungu yang berada di
+                            sekitarmu (waktunya hanya 30 detik, lalu upload di sosmed kamu)</p>
                     </div>
                 </div>
             </div>
@@ -193,7 +202,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">pasang status WA dengan lirik lagu kangen band yang berjudul pujaan hati (bagian reff nya saja)</p>
+                        <p class="card-text">pasang status WA dengan lirik lagu kangen band yang berjudul pujaan hati
+                            (bagian reff nya saja)</p>
                     </div>
                 </div>
             </div>
@@ -201,7 +211,8 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">sebutkan 5 penyanyi indonesia yang namanya berawalan dari huruf A (waktunya hanya 15 detik)</p>
+                        <p class="card-text">sebutkan 5 penyanyi indonesia yang namanya berawalan dari huruf A (waktunya
+                            hanya 15 detik)</p>
                     </div>
                 </div>
             </div>
@@ -217,7 +228,7 @@
                 <div class="card text-bg-light">
                     <div class="card-header">Dare</div>
                     <div class="card-body">
-                        <p class="card-text">Stand  up comedy di depan pemain lain sampai ada yang tertawa</p>
+                        <p class="card-text">Stand up comedy di depan pemain lain sampai ada yang tertawa</p>
                     </div>
                 </div>
             </div>
@@ -231,4 +242,5 @@
     </div>
 
 </body>
+
 </html>
