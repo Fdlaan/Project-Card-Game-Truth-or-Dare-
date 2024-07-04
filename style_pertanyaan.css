@@ -93,3 +93,28 @@ body {
 .card-header{
   background: #ffe4c4;
 }
+
+.btn-truth {
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.btn-dare {
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.btn-truth.active,
+.btn-dare.active {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.btn-truth.active:hover,
+.btn-dare.active:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}

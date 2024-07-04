@@ -41,9 +41,10 @@
             </div>
             <a class="navbar-brand" href="#">DAFTAR TANTANGAN</a>
             <div class="tod">
-                <a href="pertanyaan.php" class="btn btn-light">Truth</a>
-                <a href="#" class="btn btn-light">Dare</a>
+                <a href="pertanyaan.php" class="btn btn-truth">Truth</a>
+                <a href="#" class="btn btn-dare active">Dare</a>
             </div>
+
         </div>
     </nav>
 
