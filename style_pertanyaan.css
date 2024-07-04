@@ -94,6 +94,11 @@ body {
   background: #ffe4c4;
 }
 
+.card-body {
+    font-size: 2vh;
+    overflow: auto;
+}
+
 .btn-truth {
   background-color: white;
   border-color: black;
