@@ -21,7 +21,10 @@ session_start();
         }
 
         body {
-            background: linear-gradient(180deg, rgba(7, 5, 137, 0.75) 0%, rgba(28, 234, 248, 0.75) 100%);
+            background-image: url(assets/6.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
 
         .kartu {
@@ -29,7 +32,7 @@ session_start();
             font-weight: bold;
             flex-direction: column;
             text-align: center;
-            background: rgba(74, 144, 226, 0.6);
+            background: rgba(168, 121, 17, 0.6);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(8px);
             border-radius: 6px;

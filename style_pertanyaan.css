@@ -17,7 +17,10 @@ body {
   font-family: Arial;
   font-weight: bold;
   justify-content: center;
-  background: rgb(150, 208, 255);
+  background-image: url(assets/6.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   box-shadow: 0 8px 32px 0 rgb(210, 210, 210, 0.6);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
