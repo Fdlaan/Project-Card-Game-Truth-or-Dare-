@@ -19,6 +19,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       justify-content: center;
       align-items: center;
       margin: 0;
+      padding: 15px;
       background-image: url('assets/<?php echo $image; ?>');
       background-size: cover;
       background-repeat: no-repeat;
