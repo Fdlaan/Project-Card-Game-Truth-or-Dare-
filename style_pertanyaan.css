@@ -95,6 +95,7 @@ body {
 }
 
 .card-body {
+    height: 90px;
     font-size: 2vh;
     overflow: auto;
 }
