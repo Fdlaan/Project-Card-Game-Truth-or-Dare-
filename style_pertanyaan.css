@@ -17,9 +17,11 @@ body {
   font-family: Arial;
   font-weight: bold;
   justify-content: center;
-  background: #ffe4c4;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(3.5px);
+  background: rgb(150, 208, 255);
+  box-shadow: 0 8px 32px 0 rgb(210, 210, 210, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
 }
 
 .navbar .navbar-brand {
@@ -61,7 +63,7 @@ body {
   border-radius: 10px;
 }
 
-.next{
+.next {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -76,7 +78,6 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 10px;
-  
 }
 
 .kembali i {
@@ -90,14 +91,16 @@ body {
   left: 15px;
 }
 
-.card-header{
-  background: #ffe4c4;
+.card-header {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
 }
 
 .card-body {
-    height: 90px;
-    font-size: 18px;
-    overflow: auto;
+  height: 90px;
+  font-size: 18px;
+  overflow: auto;
 }
 
 .btn-truth {

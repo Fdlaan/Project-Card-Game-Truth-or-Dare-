@@ -29,8 +29,10 @@ session_start();
             font-weight: bold;
             flex-direction: column;
             text-align: center;
-            background: linear-gradient(180deg, rgba(7, 5, 137, 0.75) 0%, rgba(28, 234, 248, 0.5) 100%);
-            box-shadow: 0 2px 2px rgba(28, 234, 248, 0.75);
+            background: rgba(74, 144, 226, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            border-radius: 6px;
             overflow: auto;
         }
 
@@ -38,7 +40,7 @@ session_start();
             font-weight: bold;
             color: white;
             margin-top: 10px;
-            font-size: 7vw;
+            font-size: 88px;
         }
 
         a {
