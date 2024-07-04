@@ -87,7 +87,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
     .modal button {
       margin: 10px;
-    }
+    } 
 
 
     #scoreboard {

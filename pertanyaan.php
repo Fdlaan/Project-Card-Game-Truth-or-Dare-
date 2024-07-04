@@ -34,12 +34,13 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
             </div>
             <a class="navbar-brand">DAFTAR KEJUJURAN</a>
-            <div class="tod">
-                <a href="#" class="btn btn-truth active">Truth</a>
-                <a href="dare.php" class="btn btn-dare">Dare</a>
-            </div>
         </div>
     </nav>
+
+    <div class="tod">
+        <a href="#" class="btn btn-truth active">Truth</a>
+        <a href="dare.php" class="btn btn-dare">Dare</a>
+    </div>
 
     <div class="container mt-5">
         <div class="row">
@@ -51,6 +52,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -59,6 +62,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -67,6 +72,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -75,6 +82,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -83,6 +92,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -91,6 +102,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -99,6 +112,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -107,6 +122,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -115,6 +132,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -123,6 +142,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -131,6 +152,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -139,6 +162,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -147,6 +172,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -155,6 +182,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -163,6 +192,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -171,6 +202,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -179,6 +212,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -187,6 +222,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -195,6 +232,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -203,6 +242,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-4 mb-3">
                 <div class="card text-bg-light custom-card">
                     <div class="card-header">Truth</div>
@@ -214,6 +255,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </div>
 
+    
     <div class="next text-end mt-4">
         <a href="spin wheel.php" class="btn btn-primary">
             NEXT
