@@ -18,7 +18,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       margin: 0;
       background-image: url('assets/<?php echo $image; ?>');
       background-size: cover;
@@ -222,8 +221,9 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         border-radius: 10px;
         text-align: center;
         margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
         height: fit-content;
-        width: 520px;
       }
     }
   </style>
