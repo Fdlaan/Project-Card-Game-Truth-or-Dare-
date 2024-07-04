@@ -87,18 +87,22 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
     .modal button {
       margin: 10px;
-    } 
+    }
 
 
     #scoreboard {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: rgba(255, 255, 255, 1);
       border: 2px solid black;
       padding: 5px;
       border-radius: 10px;
       text-align: center;
       height: fit-content;
       margin-top: 20%;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      border-radius: 10px;
     }
 
     a {
@@ -120,7 +124,9 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     .input-container input {
       border-radius: 15px;
       height: 30px;
-    
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 10px;
     }
 
     .input-container button {
@@ -130,10 +136,13 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       height: 51px;
       margin-top: 0;
       margin-bottom: 0;
-      padding: 10px 20px;
-      font-size: 24px;
+      padding: 10px;
+      font-size: 20px;
       cursor: pointer;
-
+      background: rgba(74, 144, 226);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 10px;
+      color: white;
     }
 
     .wheel-container button {
