@@ -32,7 +32,7 @@ session_start();
             font-weight: bold;
             flex-direction: column;
             text-align: center;
-            background: rgba(168, 121, 17, 0.6);
+            background: rgba(255, 221, 145);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(8px);
             border-radius: 6px;
@@ -41,7 +41,6 @@ session_start();
 
         h1 {
             font-weight: bold;
-            color: white;
             margin-top: 10px;
             font-size: 88px;
         }
