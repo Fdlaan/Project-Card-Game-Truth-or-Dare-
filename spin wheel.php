@@ -454,7 +454,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       rotateWheel();
     });
 
-    addButton.addEventListener("click", () => {
+    const addSegment = () => {
       if (segments.length >= 5) {
         alert("Maksimal hanya 5 pemain saja!");
         return;
@@ -468,6 +468,14 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         updateScores();
       } else {
         alert("Tambahkan Pemain!");
+      }
+    };
+    addButton.addEventListener("click", addSegment);
+
+    // Add event listener for Enter key
+    itemInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        addSegment();
       }
     });
 
