@@ -32,17 +32,15 @@ session_start();
             font-weight: bold;
             flex-direction: column;
             text-align: center;
-            background: rgba(255, 221, 145);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(8px);
             border-radius: 6px;
             overflow: auto;
         }
 
         h1 {
             font-weight: bold;
+            color: white;
             margin-top: 10px;
-            font-size: 88px;
+            font-size: 92px;
         }
 
         a {
