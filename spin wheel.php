@@ -137,7 +137,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       margin-top: 0;
       margin-bottom: 0;
       padding: 10px;
-      font-size: 20px;
+      font-size: 15px;
       cursor: pointer;
       background: rgba(74, 144, 226);
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -147,6 +147,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
     .wheel-container button {
       border-radius: 15px;
+      width: 90px;
       font-weight: bold;
     }
 
@@ -193,6 +194,10 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       display: none;
     }
 
+    #spinButton {
+      width:100px;
+    }
+
     @media screen and (max-width: 850px) {
 
       .wheel-container {
@@ -221,12 +226,12 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
   <div class="wheel-container">
     <div class="controls-container">
       <div class="input-container">
-        <input type="text" id="itemInput" placeholder="Tambahkan Pemain!" />
+        <input type="text" id="itemInput" placeholder=" Masukkan nama anda!" />
         <button class="add-button" id="addButton">Tambah Pemain</button>
       </div>
 
       <canvas id="wheel" width="500" height="500"></canvas>
-      <button id="spinButton">Spin!</button>
+      <button id="spinButton">Spin!</button> 
     </div>
 
     <div class="scoreboard" id="scoreboard">
