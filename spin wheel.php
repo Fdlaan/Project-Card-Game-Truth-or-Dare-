@@ -189,26 +189,11 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       margin-inline: 43%;
     }
 
-    .owl {
-      position: absolute;
-      display: flex;
-      right: 5px;
-      top: -28px;
-    }
-
-    .owl img {
-      width: 180px;
-    }
-
     .modal .truthDareQuestion {
       display: none;
     }
 
     @media screen and (max-width: 850px) {
-
-      .owl {
-        display: none;
-      }
 
       .wheel-container {
         display: flex;
@@ -243,8 +228,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       <canvas id="wheel" width="500" height="500"></canvas>
       <button id="spinButton">Spin!</button>
     </div>
-
-    <div class="owl"><img src="assets/Owl.png" alt="dekor owl"></div>
 
     <div class="scoreboard" id="scoreboard">
       <h3>Scoreboard</h3>
@@ -472,7 +455,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     };
     addButton.addEventListener("click", addSegment);
 
-    // Add event listener for Enter key
+
     itemInput.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         addSegment();
