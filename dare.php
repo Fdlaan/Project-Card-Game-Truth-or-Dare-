@@ -70,7 +70,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     </div>
 
     <div class="next text-end mt-4">
-        <a href="spin_wheel.php" class="btn btn-primary">
+        <a href="spin wheel.php" class="btn btn-primary">
             NEXT
         </a>
     </div>
