@@ -163,17 +163,18 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     .modal .selectedPlayer {
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       font-weight: bold;
-      color: #fff;
-      background: none;
+      color: #000000;
     }
 
     .modal p {
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.4);
+      color: #000000 ;
+      background: rgba(255, 255, 255, 1);
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
@@ -207,7 +208,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       }
 
       #scoreboard {
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0,8);
         padding: 5px;
         border-radius: 10px;
         text-align: center;
