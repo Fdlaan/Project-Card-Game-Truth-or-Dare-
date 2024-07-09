@@ -32,6 +32,9 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
             </div>
             <a class="navbar-brand">DAFTAR TANTANGAN</a>
+            <div class="tambah">
+            <a href="tambah_tantangan.php"><i class="bi bi-plus-circle"></i></a>
+            </div>
         </div>
     </nav>
 
@@ -41,7 +44,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     </div>
 
     <div class="container mt-5">
-        <a href="tambah_tantangan.php"><i class="bi bi-plus-circle"></i></a>
         <div class="row">
             <?php
             include 'db.php';
@@ -56,7 +58,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                             <div class="card-header">Dare</div>
                             <div class="card-body">
                                 <p class="card-text">' . htmlspecialchars($row['dare_text']) . '</p>
-                                <a href=".php?id=' . $row['id'] . '" class="btn btn-primary">Edit</a>
+                                <a href="edit_dare.php?id=' . $row['id'] . '" class="btn btn-primary">Edit</a>
                                 <a href="delete_dare.php?id=' . $row['id'] . '" class="btn btn-danger">Hapus</a>
                             </div>
                         </div>
