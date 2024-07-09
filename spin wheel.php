@@ -4,8 +4,34 @@ if (isset($_GET['image'])) {
   $_SESSION['background_image'] = htmlspecialchars($_GET['image']);
 }
 $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'default.png';
-?>
 
+include 'db.php';
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$truthQuestions = [];
+$dareChallenges = [];
+
+$sql = "SELECT question FROM questions";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    $truthQuestions[] = $row['question'];
+  }
+}
+
+$sql = "SELECT challenge FROM dare_challenges";
+$result = $conn->query($sql);
+if ($result && $result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    $dareChallenges[] = $row['challenge'];
+  }
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,7 +114,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     .modal button {
       margin: 10px;
     }
-
 
     #scoreboard {
       font-family: Arial, Helvetica, sans-serif;
@@ -173,7 +198,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
-      color: #000000 ;
+      color: #000000;
       background: rgba(255, 255, 255, 1);
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       backdrop-filter: blur(4px);
@@ -196,11 +221,10 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     }
 
     #spinButton {
-      width:100px;
+      width: 100px;
     }
 
     @media screen and (max-width: 850px) {
-
       .wheel-container {
         display: flex;
         flex-direction: column;
@@ -208,7 +232,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       }
 
       #scoreboard {
-        background-color: rgba(255, 255, 255, 0,8);
+        background-color: rgba(255, 255, 255, 0, 8);
         padding: 5px;
         border-radius: 10px;
         text-align: center;
@@ -217,6 +241,17 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         margin-right: auto;
         height: fit-content;
       }
+    }
+
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 30px solid red;
+      position: absolute;
+      top: 10px;
+      left: calc(50% - 20px); /* Center the arrow */
     }
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
@@ -227,12 +262,14 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
   <div class="wheel-container">
     <div class="controls-container">
       <div class="input-container">
-        <input type="text" id="itemInput" placeholder=" Masukkan nama anda!" />
+        <input type="text" id="itemInput" placeholder="Masukkan nama anda!" />
         <button class="add-button" id="addButton">Tambah Pemain</button>
       </div>
 
+      <div class="arrow"></div> <!-- Add the arrow element here -->
+
       <canvas id="wheel" width="500" height="500"></canvas>
-      <button id="spinButton">Spin!</button> 
+      <button id="spinButton">Spin!</button>
     </div>
 
     <div class="scoreboard" id="scoreboard">
@@ -285,118 +322,49 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
     const scores = {};
 
-    const truthQuestions = [
-      "ceritakan pengalaman memalukan yang tidak bisa kamu lupakan?",
-      "jika kamu menemukan uang 100JT dijalan, apa yang akan kamu lakukan?",
-      "sebutkan cinta pertamamu!!",
-      "sebutkan 3 hal yang membuat kamu mudah emosi?",
-      "ceritakan kejadian paling horor, mistis yang pernah kamu alami?",
-      "tunjuk 1 pemain yang menurutmu lebih cantik/ ganteng dari kamu!",
-      "jika kamu bisa pergi nge-date dengan artis idolamu, siapa artis yang akan kamu pilih?",
-      "ceritakan mimpi yang paling aneh dan konyol yang pernah kamu alami",
-      "ceritakan pengalaman paling memalukan yang tidak bisa kamu lupakan sampai sekarang!",
-      "sebutkan nama cinta monyet pertamamu!",
-      "kira-kira berapa lama kamu mampu bertahan tanpa memegang ponsel?",
-      "sebutkan 5 tipe ideal untuk menjadi pasanganmu!",
-      "ceritakan moment lucu masa kecil kamu yang tidak bisa kamu lupakan! ",
-      "sebutkan 5 hal yang membuat kamu takut!",
-      "sebutkan negara yang ingin kamu kunjungi jika punya banyak uang!",
-      "ceritakan moment paling bahagia yang membuat kamu ingin mengulangnya",
-      "apakah kamu pernah merasa insecure?, saat apakah itu?",
-      "jika kamu bisa kembali ke masa lalu, apa yang ingin kamu perbaiki?",
-      "mana yang membuat kamu paling sedih? dibohongi atau ditinggalkan?",
-      "dari semua pemain tunjuk 1 orang yang menurut kamu paling gabisa jaga rahasia!",
-      "Kalau kamu tiba tiba bisa menghilang, apakah hal pertama yang akan kamu lakukan?",
-    ];
-
-    const dareChallenges = [
-      "buat suara bebek, tiap 1 menit sekali selama 10 menit",
-      "selfie dengan hewan apapun yang ada di sekitarmu , kemudian upload di sosmed!.",
-      "ganti foto profil kamu dengan pemain yang berada duduk di sebelahkananmu!.",
-      "ajak 3 orang berkenalan yang tidak kamu kenal yang berada di sekitarmu!.",
-      "bicara hanya menggunakan huruf o selama 10 menit.",
-      "joget tiktok dengan lagu/trend yang lagi viral.",
-      "tetap dalam posisi berdiri sampai melewati giliran 5 orang pemain",
-      "ambil beras 1 sendok makan lalu hitung jumlah butirnya dalam waktu 3 menit",
-      "dalam waktu 30 detik, menangislah sampai bisa mengeluarkan air mata",
-      "ganti foto profil WA kamu dengan foto pemain yang duduk di sebelah kiri kamu! (pertakankan selama 24 jam)",
-      "stel lagu dangdut, lalu joget sampai melewati giliran 3 pemain",
-      "gambar LOVE di jidat kamu menggunakan lipstik atau spidol, dan jangan di hapus sampai permainan berakhir",
-      "ambil salah satu foto pemain, dan jadikan story IG/WA dengan caption 'kesayanganku'!",
-      "genggam tangan pemain lain yang ada di sebelah kananmu sampai melewati giliran 3 pemain",
-      "cari lalu selfie dengan benda apapun yang berwarna ungu yang berada di sekitarmu (waktunya hanya 30 detik, lalu upload di sosmed kamu)",
-      "ajak tos 3 orang yang tidak kamu kenal yang berada di sekitarmu!",
-      "pasang status WA dengan lirik lagu kangen band yang berjudul pujaan hati (bagian reff nya saja)",
-      "sebutkan 5 penyanyi indonesia yang namanya berawalan dari huruf A (waktunya hanya 15 detik)",
-      "lari di tempat sampai melewati giliran 3 pemain",
-      "stand up comedy di depan pemain lain sampai ada yang tertawa!",
-      "Tiru salah satu foto yang ada di media sosialmu secara acak!",
-    ];
+    const truthQuestions = <?php echo json_encode($truthQuestions); ?>;
+    const dareChallenges = <?php echo json_encode($dareChallenges); ?>;
 
     const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
     const drawRouletteWheel = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      if (segments.length === 0) {
+      if (segments.length === 0) return;
 
-        // Draw an empty circle
-        ctx.fillStyle = "#ddd";
+      arc = Math.PI / (segments.length / 2);
+
+      segments.forEach((segment, i) => {
+        const angle = startAngle + i * arc;
+        ctx.fillStyle = colors[i % colors.length];
         ctx.beginPath();
-        ctx.arc(250, 250, 200, 0, 2 * Math.PI);
+        ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, angle, angle + arc, false);
+        ctx.arc(canvas.width / 2, canvas.height / 2, 0, angle + arc, angle, true);
+        ctx.stroke();
         ctx.fill();
+        ctx.save();
 
-        // Arrow
-        ctx.fillStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(250 - 4, 250 - (200 + 20));
-        ctx.lineTo(250 + 4, 250 - (200 + 20));
-        ctx.lineTo(250 + 4, 250 - (200 - 20));
-        ctx.lineTo(250 + 9, 250 - (200 - 20));
-        ctx.lineTo(250 + 0, 250 - (200 - 30));
-        ctx.lineTo(250 - 9, 250 - (200 - 20));
-        ctx.lineTo(250 - 4, 250 - (200 - 20));
-        ctx.lineTo(250 - 4, 250 - (200 + 20));
-        ctx.fill();
-      } else {
-        arc = Math.PI / (segments.length / 2);
+        ctx.fillStyle = "white";
+        ctx.translate(
+          canvas.width / 2 + Math.cos(angle + arc / 2) * (canvas.width / 4),
+          canvas.height / 2 + Math.sin(angle + arc / 2) * (canvas.height / 4)
+        );
+        ctx.rotate(angle + arc / 2 + Math.PI / 2);
+        ctx.fillText(segment, -ctx.measureText(segment).width / 2, 0);
+        ctx.restore();
+      });
+    };
 
-        segments.forEach((segment, i) => {
-          const angle = startAngle + i * arc;
-          ctx.fillStyle = colors[i % colors.length];
-          ctx.beginPath();
-          ctx.arc(250, 250, 200, angle, angle + arc, false);
-          ctx.arc(250, 250, 0, angle + arc, angle, true);
-          ctx.fill();
-
-          ctx.save();
-          ctx.fillStyle = "white";
-          ctx.translate(
-            250 + Math.cos(angle + arc / 2) * 160,
-            250 + Math.sin(angle + arc / 2) * 160
-          );
-          ctx.rotate(angle + arc / 2 + Math.PI / 2);
-          ctx.fillText(segment, -ctx.measureText(segment).width / 2, 0);
-          ctx.restore();
-        });
-
-        // Arrow
-        ctx.fillStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(250 - 4, 250 - (200 + 20));
-        ctx.lineTo(250 + 4, 250 - (200 + 20));
-        ctx.lineTo(250 + 4, 250 - (200 - 20));
-        ctx.lineTo(250 + 9, 250 - (200 - 20));
-        ctx.lineTo(250 + 0, 250 - (200 - 30));
-        ctx.lineTo(250 - 9, 250 - (200 - 20));
-        ctx.lineTo(250 - 4, 250 - (200 - 20));
-        ctx.lineTo(250 - 4, 250 - (200 + 20));
-        ctx.fill();
-      }
+    const spin = () => {
+      spinAngleStart += Math.random() * 10 - 5;
+      spinTime = 0;
+      spinTimeTotal = Math.random() * 3000 + 2000;
+      rotateWheel();
     };
 
     const rotateWheel = () => {
       spinTime += 30;
+
       if (spinTime >= spinTimeTotal) {
         stopRotateWheel();
         return;
@@ -412,10 +380,9 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       clearTimeout(spinTimeout);
       const degrees = (startAngle * 180) / Math.PI + 90;
       const arcd = (arc * 180) / Math.PI;
-      const index = Math.floor((360 - (degrees % 360)) / arcd);
-      const selectedSegment = segments[index];
-      selectedPlayer.textContent = `Player: ${selectedSegment}`;
+      const index = Math.floor((degrees % 360) / arcd);
       modal.style.display = "block";
+      selectedPlayer.textContent = `Player: ${segments[index]}`;
     };
 
     const easeOut = (t, b, c, d) => {
@@ -424,85 +391,62 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
       return b + c * (tc + -3 * ts + 3 * t);
     };
 
-    const updateScores = () => {
-      scoresDiv.innerHTML = "";
-      Object.keys(scores).forEach(player => {
-        scoresDiv.innerHTML += `<p>${player}: Truth - ${scores[player].truth}, Dare - ${scores[player].dare}</p>`;
-      });
-    };
-
-    spinButton.addEventListener("click", () => {
-      if (segments.length === 0) {
-        alert("Tambahkan Pemain!");
-        return;
-      }
-      spinAngleStart = Math.random() * 10 + 10;
-      spinTime = 0;
-      spinTimeTotal = Math.random() * 12 + 13 * 1000; // Mempercepat waktu putaran total
-      modal.style.display = "none";
-      rotateWheel();
-    });
-
-    const addSegment = () => {
-      if (segments.length >= 5) {
-        alert("Maksimal hanya 5 pemain saja!");
-        return;
-      }
-      const newItem = itemInput.value.trim();
-      if (newItem) {
-        segments.push(newItem);
-        scores[newItem] = { truth: 0, dare: 0 };
-        itemInput.value = "";
-        drawRouletteWheel();
-        updateScores();
-      } else {
-        alert("Tambahkan Pemain!");
-      }
-    };
-    addButton.addEventListener("click", addSegment);
-
-
-    itemInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        addSegment();
-      }
-    });
-
-    truthButton.addEventListener("click", () => {
-      const player = selectedPlayer.textContent.split(": ")[1];
-      scores[player].truth += 1;
-      truthDareQuestion.textContent = getRandomItem(truthQuestions);
-      truthButton.style.display = "none";
-      dareButton.style.display = "none";
-      okButton.style.display = "block";
-      truthDareQuestion.classList.remove("truthDareQuestion");
-      updateScores();
-    });
-
-    dareButton.addEventListener("click", () => {
-      const player = selectedPlayer.textContent.split(": ")[1];
-      scores[player].dare += 1;
-      truthDareQuestion.textContent = getRandomItem(dareChallenges);
-      truthButton.style.display = "none";
-      dareButton.style.display = "none";
-      okButton.style.display = "block";
-      truthDareQuestion.classList.remove("truthDareQuestion");
-      updateScores();
-    });
-
-    okButton.addEventListener("click", () => {
+    const closeModal = () => {
       modal.style.display = "none";
       truthDareQuestion.textContent = "";
-      truthButton.style.display = "inline-block";
-      dareButton.style.display = "inline-block";
       okButton.style.display = "none";
-      truthDareQuestion.classList.add("truthDareQuestion");
+    };
+
+    const handleTruthClick = () => {
+      truthDareQuestion.textContent = `Truth: ${getRandomItem(truthQuestions)}`;
+      truthButton.style.display = "none";
+      dareButton.style.display = "none";
+      okButton.style.display = "block";
+      truthDareQuestion.style.display = "block"; // Ensure the question is displayed
+    };
+
+    const handleDareClick = () => {
+      truthDareQuestion.textContent = `Dare: ${getRandomItem(dareChallenges)}`;
+      truthButton.style.display = "none";
+      dareButton.style.display = "none";
+      okButton.style.display = "block";
+      truthDareQuestion.style.display = "block"; // Ensure the question is displayed
+    };
+
+    const handleAddButtonClick = () => {
+      const newPlayer = itemInput.value.trim();
+      if (newPlayer) {
+        segments.push(newPlayer);
+        scores[newPlayer] = { truth: 0, dare: 0 };
+        updateScores();
+        itemInput.value = "";
+        drawRouletteWheel();
+      }
+    };
+
+    const updateScores = () => {
+      scoresDiv.innerHTML = '';
+      for (const player in scores) {
+        const playerScore = scores[player];
+        const scoreDiv = document.createElement('div');
+        scoreDiv.classList.add('score');
+        scoreDiv.innerHTML = `<strong>${player}:</strong> Truths: ${playerScore.truth}, Dares: ${playerScore.dare}`;
+        scoresDiv.appendChild(scoreDiv);
+      }
+    };
+
+    addButton.addEventListener("click", handleAddButtonClick);
+    spinButton.addEventListener("click", spin);
+    truthButton.addEventListener("click", handleTruthClick);
+    dareButton.addEventListener("click", handleDareClick);
+    okButton.addEventListener("click", () => {
+      closeModal();
+      truthButton.style.display = "block";
+      dareButton.style.display = "block";
     });
 
     drawRouletteWheel();
   </script>
-
-  <a href="title.php"><i class="bi bi-x-circle"></i></a>
 </body>
 
 </html>
