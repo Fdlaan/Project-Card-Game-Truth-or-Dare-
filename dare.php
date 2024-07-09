@@ -58,7 +58,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                             <div class="card-header">Dare</div>
                             <div class="card-body">
                                 <p class="card-text">' . htmlspecialchars($row['dare_text']) . '</p>
-                                <a href="edit_dare.php?id=' . $row['id'] . '" class="btn btn-primary">Edit</a>
+                                <a href="edit_dare.php?id=' . $row['id'] . '" class="btn btn-primary" onclick="return confirm(\'Yakin ingin mengedit tantangan?\')"><i class="bi bi-pencil-square"></i></a>
                                 <a href="delete_dare.php?id=' . $row['id'] . '" class="btn btn-danger">Hapus</a>
                             </div>
                         </div>

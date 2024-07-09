@@ -62,11 +62,14 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     echo '
                     <div class="col-md-4 mb-3">
                         <div class="card text-bg-light custom-card">
-                            <div class="card-header">Truth</div>
+                            <div class="card-header">Truth
+                                <div class="edit-apus">
+                                    <a href="hapus_pertanyaan.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
+                                    <a href="edit_question.php?id=' . $row['id'] . '" class="btn btn-outline-primary btn-sm" onclick="return confirm(\'Yakin ingin mengedit?\')"><i class="bi bi-pencil-square"></i></a>
+                                </div>
+                            </div>
                             <div class="card-body">
                                 <p class="card-text">' . htmlspecialchars($row['question']) . '</p>
-                                <a href="hapus_pertanyaan.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
-                                <a href="edit_question.php?id=' . $row['id'] . '" class="btn btn-primary">Edit</a>
                             </div>
                         </div>
                     </div>';
