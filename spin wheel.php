@@ -83,6 +83,7 @@ $conn->close();
     .input-container {
       display: flex;
       flex-direction: row;
+      margin-bottom: 25px;
     }
 
     input {
@@ -174,6 +175,8 @@ $conn->close();
       border-radius: 15px;
       width: 90px;
       font-weight: bold;
+      background: rgba(74, 144, 226);
+      color: white;
     }
 
     .modal {
@@ -224,6 +227,17 @@ $conn->close();
       width: 100px;
     }
 
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 30px solid black;
+      position: absolute;
+      rotate: 180deg;
+      top: 13%;
+    }
+
     @media screen and (max-width: 850px) {
       .wheel-container {
         display: flex;
@@ -242,17 +256,7 @@ $conn->close();
         height: fit-content;
       }
     }
-
-    .arrow {
-      width: 0;
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-bottom: 30px solid red;
-      position: absolute;
-      top: 10px;
-      left: calc(50% - 20px); /* Center the arrow */
-    }
+    
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
     rel="stylesheet">
@@ -268,7 +272,7 @@ $conn->close();
 
       <div class="arrow"></div> <!-- Add the arrow element here -->
 
-      <canvas id="wheel" width="500" height="500"></canvas>
+      <canvas id="wheel" width="450" height="450"></canvas>
       <button id="spinButton">Spin!</button>
     </div>
 
