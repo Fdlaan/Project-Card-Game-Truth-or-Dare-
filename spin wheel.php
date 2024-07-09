@@ -22,11 +22,11 @@ if ($result->num_rows > 0) {
   }
 }
 
-$sql = "SELECT challenge FROM dare_challenges";
+$sql = "SELECT dare_text FROM dare_challenges";
 $result = $conn->query($sql);
 if ($result && $result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-    $dareChallenges[] = $row['challenge'];
+    $dareChallenges[] = $row['dare_text'];
   }
 }
 
