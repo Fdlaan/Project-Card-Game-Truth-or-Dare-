@@ -29,19 +29,13 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             font-family: 'Montserrat', sans-serif;
         }
 
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
         .tambah a {
-            color: #fff;
+            color: #000000;
             transition: transform 0.2s ease-in-out;
         }
 
         .tambah a:hover {
-            color: #ff7e5f;
+            color: #2ca889;
             transform: scale(1.2);
         }
 
@@ -66,15 +60,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
         .modal-title {
             font-weight: 600;
-        }
-
-        .btn-primary {
-            background: linear-gradient(90deg, #ff7e5f, #feb47b);
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(90deg, #feb47b, #ff7e5f);
         }
 
         .edit-apus a {
@@ -108,9 +93,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <a href="kartu.php"><i class="bi bi-arrow-left-circle"></i></a>
             </div>
             <a class="navbar-brand">Daftar Pertanyaan</a>
-            <div class="tambah">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#addQuestionModal"><i class="bi bi-plus-circle"></i></a>
-            </div>
         </div>
     </nav>
 
@@ -120,7 +102,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <div class="container">
                     <div class="tambah d-flex justify-content-between align-items-center mb-3">
                         <h3>Truth</h3>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#addTruthModal"><i class="bi bi-plus-circle"></i></a>
+                        <a href="tambah_pertanyaan.php" data-bs-toggle="modal" data-bs-target="#addTruthModal"><i
+                                class="bi bi-plus-circle"></i></a>
                     </div>
                     <?php
                     include 'db.php';
@@ -145,7 +128,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                                 </div>
                             </div>';
                         }
-                    } 
+                    }
                     ?>
                 </div>
             </div>
@@ -153,7 +136,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <div class="container">
                     <div class="tambah d-flex justify-content-between align-items-center mb-3">
                         <h3>Dare</h3>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#addDareModal"><i class="bi bi-plus-circle"></i></a>
+                        <a href="tambah_tantangan.php" data-bs-toggle="modal" data-bs-target="#addDareModal"><i
+                                class="bi bi-plus-circle"></i></a>
                     </div>
                     <?php
                     include 'db.php';
@@ -178,7 +162,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                                 </div>
                             </div>';
                         }
-                    } 
+                    }
                     ?>
                 </div>
             </div>
@@ -186,7 +170,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     </div>
 
     <div class="next text-end mt-4">
-        <a href="spin_wheel.php" class="btn btn-primary">
+        <a href="spin wheel.php" class="btn btn-primary">
             NEXT
         </a>
     </div>
@@ -239,7 +223,9 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12vGqj5XR5lbP1xbHFLZ6xFl+a6jXk9ip3Nwi6xqBguXerN9" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12vGqj5XR5lbP1xbHFLZ6xFl+a6jXk9ip3Nwi6xqBguXerN9"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
