@@ -246,40 +246,32 @@ $conn->close();
       }
     }
   </style>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
-    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="wheel-container">
-    <div class="controls-container">
-      <div class="input-container">
-        <input type="text" id="itemInput" placeholder="Masukkan nama anda!" />
-        <button class="add-button" id="addButton">Tambah Pemain</button>
-      </div>
-
-      <canvas id="wheel" width="450" height="450"></canvas>
-      <button id="spinButton">Spin!</button>
+    <div class="input-container">
+      <input type="text" id="itemInput" placeholder="Masukan Nama Pemain!" />
+      <button class="add-button" id="addButton">Tambah Pemain</button>
     </div>
-
+    <canvas id="wheel" width="500" height="500"></canvas>
+    <button id="spinButton">Spin!</button>
     <div class="scoreboard" id="scoreboard">
       <h3>Scoreboard</h3>
       <div id="scores"></div>
     </div>
   </div>
-
   <div class="modal" id="modal">
-    <p class="selectedPlayer" id="selectedPlayer"></p>
+    <p id="selectedPlayer"></p>
     <button id="truthButton">Truth</button>
     <button id="dareButton">Dare</button>
-    <p class="truthDareQuestion" id="truthDareQuestion"></p>
+    <p id="truthDareQuestion"></p>
     <button id="okButton" style="display:none;">OK</button>
   </div>
-
   <div class="back">
     <a href="pertanyaan.php"><i class="bi bi-arrow-left-circle"></i></a>
   </div>
-
   <script>
     const canvas = document.getElementById("wheel");
     const ctx = canvas.getContext("2d");
@@ -294,7 +286,6 @@ $conn->close();
     const okButton = document.getElementById("okButton");
     const scoreboard = document.getElementById("scoreboard");
     const scoresDiv = document.getElementById("scores");
-    const showScore = document.getElementById("showScore");
 
     let segments = [];
     const colors = [
@@ -323,7 +314,19 @@ $conn->close();
       if (segments.length === 0) {
         ctx.fillStyle = "#ddd";
         ctx.beginPath();
-        ctx.arc(225, 225, 215, 0, 2 * Math.PI);
+        ctx.arc(250, 250, 200, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo(250 - 4, 250 - (200 + 20));
+        ctx.lineTo(250 + 4, 250 - (200 + 20));
+        ctx.lineTo(250 + 4, 250 - (200 - 20));
+        ctx.lineTo(250 + 9, 250 - (200 - 20));
+        ctx.lineTo(250 + 0, 250 - (200 - 30));
+        ctx.lineTo(250 - 9, 250 - (200 - 20));
+        ctx.lineTo(250 - 4, 250 - (200 - 20));
+        ctx.lineTo(250 - 4, 250 - (200 + 20));
         ctx.fill();
       } else {
         arc = Math.PI / (segments.length / 2);
@@ -332,45 +335,37 @@ $conn->close();
           const angle = startAngle + i * arc;
           ctx.fillStyle = colors[i % colors.length];
           ctx.beginPath();
-          ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, angle, angle + arc, false);
-          ctx.arc(canvas.width / 2, canvas.height / 2, 0, angle + arc, angle, true);
-          ctx.stroke();
+          ctx.arc(250, 250, 200, angle, angle + arc, false);
+          ctx.arc(250, 250, 0, angle + arc, angle, true);
           ctx.fill();
-          ctx.save();
 
+          ctx.save();
           ctx.fillStyle = "white";
           ctx.translate(
-            canvas.width / 2 + Math.cos(angle + arc / 2) * (canvas.width / 4),
-            canvas.height / 2 + Math.sin(angle + arc / 2) * (canvas.height / 4)
+            250 + Math.cos(angle + arc / 2) * 160,
+            250 + Math.sin(angle + arc / 2) * 160
           );
           ctx.rotate(angle + arc / 2 + Math.PI / 2);
           ctx.fillText(segment, -ctx.measureText(segment).width / 2, 0);
           ctx.restore();
         });
-      }
-      ctx.fillStyle = "black";
-      ctx.beginPath();
-      ctx.moveTo(225 - 4, 200 - (200 + 20));
-      ctx.lineTo(225 + 4, 200 - (200 + 20));
-      ctx.lineTo(225 + 4, 200 - (200 - 50));
-      ctx.lineTo(225 + 9, 200 - (200 - 50));
-      ctx.lineTo(225 + 0, 200 - (200 - 60));
-      ctx.lineTo(225 - 9, 200 - (200 - 50));
-      ctx.lineTo(225 - 4, 200 - (200 - 50));
-      ctx.lineTo(225 - 4, 200 - (200 + 20));
-      ctx.fill();
-    };
 
-    const spin = () => {
-      spinAngleStart += Math.random() * 10 - 5;
-      spinTime = 0;
-      spinTimeTotal = Math.random() * 3000 + 2000;
-      rotateWheel();
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo(250 - 4, 250 - (200 + 20));
+        ctx.lineTo(250 + 4, 250 - (200 + 20));
+        ctx.lineTo(250 + 4, 250 - (200 - 20));
+        ctx.lineTo(250 + 9, 250 - (200 - 20));
+        ctx.lineTo(250 + 0, 250 - (200 - 30));
+        ctx.lineTo(250 - 9, 250 - (200 - 20));
+        ctx.lineTo(250 - 4, 250 - (200 - 20));
+        ctx.lineTo(250 - 4, 250 - (200 + 20));
+        ctx.fill();
+      }
     };
 
     const rotateWheel = () => {
       spinTime += 30;
-
       if (spinTime >= spinTimeTotal) {
         stopRotateWheel();
         return;
@@ -386,9 +381,10 @@ $conn->close();
       clearTimeout(spinTimeout);
       const degrees = (startAngle * 180) / Math.PI + 90;
       const arcd = (arc * 180) / Math.PI;
-      const index = Math.floor((degrees % 360) / arcd);
+      const index = Math.floor((360 - (degrees % 360)) / arcd);
+      const selectedSegment = segments[index];
+      selectedPlayer.textContent = `Player: ${selectedSegment}`;
       modal.style.display = "block";
-      selectedPlayer.textContent = `Player: ${segments[index]}`;
     };
 
     const easeOut = (t, b, c, d) => {
@@ -397,68 +393,74 @@ $conn->close();
       return b + c * (tc + -3 * ts + 3 * t);
     };
 
-    const closeModal = () => {
-      modal.style.display = "none";
-      truthDareQuestion.textContent = "";
-      okButton.style.display = "none";
+    const updateScores = () => {
+      scoresDiv.innerHTML = "";
+      Object.keys(scores).forEach(player => {
+        scoresDiv.innerHTML += `<p>${player}: Truth - ${scores[player].truth}, Dare - ${scores[player].dare}</p>`;
+      });
     };
 
-    const handleTruthClick = () => {
+    spinButton.addEventListener("click", () => {
+      if (segments.length === 0) {
+        alert("Tambahkan Pemain!");
+        return;
+      }
+      spinAngleStart = Math.random() * 10 + 10;
+      spinTime = 0;
+      spinTimeTotal = Math.random() * 15 + 14 * 1000; // Mempercepat waktu putaran total
+      modal.style.display = "none";
+      rotateWheel();
+    });
+
+    addButton.addEventListener("click", () => {
+      if (segments.length >= 5) {
+        alert("Maksimal hanya 5 pemain saja!");
+        return;
+      }
+      const newItem = itemInput.value.trim();
+      if (newItem) {
+        segments.push(newItem);
+        scores[newItem] = { truth: 0, dare: 0 };
+        itemInput.value = "";
+        drawRouletteWheel();
+        updateScores();
+      } else {
+        alert("Tambahkan Pemain!");
+      }
+    });
+
+    truthButton.addEventListener("click", () => {
+      const player = selectedPlayer.textContent.split(": ")[1];
+      scores[player].truth += 1;
       truthDareQuestion.textContent = `Truth: ${getRandomItem(truthQuestions)}`;
       truthButton.style.display = "none";
       dareButton.style.display = "none";
       okButton.style.display = "block";
-      truthDareQuestion.style.display = "block"; // Ensure the question is displayed
-    };
+      updateScores();
+    });
 
-    const handleDareClick = () => {
+    dareButton.addEventListener("click", () => {
+      const player = selectedPlayer.textContent.split(": ")[1];
+      scores[player].dare += 1;
       truthDareQuestion.textContent = `Dare: ${getRandomItem(dareChallenges)}`;
       truthButton.style.display = "none";
       dareButton.style.display = "none";
       okButton.style.display = "block";
-      truthDareQuestion.style.display = "block"; // Ensure the question is displayed
-    };
-
-    const handleAddButtonClick = () => {
-      const newPlayer = itemInput.value.trim();
-      if (newPlayer) {
-        segments.push(newPlayer);
-        scores[newPlayer] = { truth: 0, dare: 0 };
-        updateScores();
-        itemInput.value = "";
-        drawRouletteWheel();
-      }
-    };
-
-    // Event listener for Enter key press
-    itemInput.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        handleAddButtonClick();
-      }
+      updateScores();
     });
 
-    const updateScores = () => {
-      scoresDiv.innerHTML = '';
-      for (const player in scores) {
-        const playerScore = scores[player];
-        const scoreDiv = document.createElement('div');
-        scoreDiv.classList.add('score');
-        scoreDiv.innerHTML = `<strong>${player}:</strong> Truths: ${playerScore.truth}, Dares: ${playerScore.dare}`;
-        scoresDiv.appendChild(scoreDiv);
-      }
-    };
-
-    addButton.addEventListener("click", handleAddButtonClick);
-    spinButton.addEventListener("click", spin);
-    truthButton.addEventListener("click", handleTruthClick);
-    dareButton.addEventListener("click", handleDareClick);
     okButton.addEventListener("click", () => {
-      closeModal();
-      truthButton.style.display = "block";
-      dareButton.style.display = "block";
+      modal.style.display = "none";
+      truthDareQuestion.textContent = "";
+      truthButton.style.display = "inline-block";
+      dareButton.style.display = "inline-block";
+      okButton.style.display = "none";
     });
 
     drawRouletteWheel();
   </script>
+
+  <a href="title.php"><i class="bi bi-x-circle"></i></a>
 </body>
+
 </html>
