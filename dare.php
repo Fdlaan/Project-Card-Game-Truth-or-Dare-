@@ -69,7 +69,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             }
             ?>
         </div>
-    </div>
+    </div>  
 
     <div class="next text-end mt-4">
         <a href="spin wheel.php" class="btn btn-primary">

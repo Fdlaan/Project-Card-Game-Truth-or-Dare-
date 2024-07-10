@@ -18,6 +18,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
         rel="stylesheet">
     <link rel="stylesheet" href="style_pertanyaan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-image: url('assets/<?php echo $image; ?>');
@@ -25,6 +26,77 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             background-repeat: no-repeat;
             background-position: center;
             padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .tambah a {
+            color: #fff;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .tambah a:hover {
+            color: #ff7e5f;
+            transform: scale(1.2);
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .modal .modal-dialog {
+            max-width: 80%;
+            transition: transform 0.3s ease-out;
+        }
+
+        .modal.fade .modal-dialog {
+            transform: translateY(-100px);
+        }
+
+        .modal-title {
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #feb47b, #ff7e5f);
+        }
+
+        .edit-apus a {
+            margin-left: 5px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
     </style>
 </head>
@@ -37,18 +109,18 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             </div>
             <a class="navbar-brand">Daftar Pertanyaan</a>
             <div class="tambah">
-                <a href="tambah_pertanyaan.php"><i class="bi bi-plus-circle"></i></a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#addQuestionModal"><i class="bi bi-plus-circle"></i></a>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container mt-5 custom-scrollbar">
         <div class="row">
             <div class="col-md-6">
                 <div class="container">
-                    <div class="tambah">
+                    <div class="tambah d-flex justify-content-between align-items-center mb-3">
                         <h3>Truth</h3>
-                        <a href="tambah_pertanyaan.php"><i class="bi bi-plus-circle"></i></a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#addTruthModal"><i class="bi bi-plus-circle"></i></a>
                     </div>
                     <?php
                     include 'db.php';
@@ -60,7 +132,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                             echo '
                             <div class="mb-3">
                                 <div class="card text-bg-light custom-card">
-                                    <div class="card-header">Truth
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        Truth
                                         <div class="edit-apus">
                                             <a href="hapus_pertanyaan.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
                                             <a href="edit_question.php?id=' . $row['id'] . '" class="btn btn-outline-primary btn-sm" onclick="return confirm(\'Yakin ingin mengedit?\')"><i class="bi bi-pencil-square"></i></a>
@@ -73,16 +146,14 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                             </div>';
                         }
                     } 
-                        
-                  
                     ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="container">
-                    <div class="tambah">
+                    <div class="tambah d-flex justify-content-between align-items-center mb-3">
                         <h3>Dare</h3>
-                        <a href="tambah_tantangan.php"><i class="bi bi-plus-circle"></i></a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#addDareModal"><i class="bi bi-plus-circle"></i></a>
                     </div>
                     <?php
                     include 'db.php';
@@ -94,7 +165,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                             echo '
                             <div class="mb-3">
                                 <div class="card text-bg-light custom-card">
-                                    <div class="card-header">Dare
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        Dare
                                         <div class="edit-apus">
                                             <a href="delete_dare.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
                                             <a href="edit_dare.php?id=' . $row['id'] . '" class="btn btn-outline-primary btn-sm" onclick="return confirm(\'Yakin ingin mengedit tantangan?\')"><i class="bi bi-pencil-square"></i></a>
@@ -107,8 +179,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                             </div>';
                         }
                     } 
-                       
-                
                     ?>
                 </div>
             </div>
@@ -116,10 +186,60 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     </div>
 
     <div class="next text-end mt-4">
-        <a href="spin wheel.php" class="btn btn-primary">
+        <a href="spin_wheel.php" class="btn btn-primary">
             NEXT
         </a>
     </div>
+
+    <!-- Modal for Adding Truth Question -->
+    <div class="modal fade" id="addTruthModal" tabindex="-1" aria-labelledby="addTruthModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTruthModalLabel">Tambah Pertanyaan Truth</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="tambah_pertanyaan.php" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="truthQuestion" class="form-label">Pertanyaan</label>
+                            <input type="text" class="form-control" id="truthQuestion" name="question" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Adding Dare Challenge -->
+    <div class="modal fade" id="addDareModal" tabindex="-1" aria-labelledby="addDareModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addDareModalLabel">Tambah Tantangan Dare</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="tambah_tantangan.php" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="dareText" class="form-label">Tantangan</label>
+                            <input type="text" class="form-control" id="dareText" name="dare_text" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12vGqj5XR5lbP1xbHFLZ6xFl+a6jXk9ip3Nwi6xqBguXerN9" crossorigin="anonymous"></script>
 </body>
 
 </html>
