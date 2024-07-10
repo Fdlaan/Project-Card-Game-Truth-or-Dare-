@@ -31,6 +31,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
         .tambah a {
             color: #000000;
+            font-size: 2.25rem;
             transition: transform 0.2s ease-in-out;
         }
 
