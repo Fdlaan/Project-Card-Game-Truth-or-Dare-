@@ -348,7 +348,6 @@ $conn->close();
           ctx.restore();
         });
       }
-
       ctx.fillStyle = "black";
       ctx.beginPath();
       ctx.moveTo(225 - 4, 200 - (200 + 20));
