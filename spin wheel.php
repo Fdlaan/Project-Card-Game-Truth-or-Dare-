@@ -17,7 +17,7 @@ $dareChallenges = [];
 $sql = "SELECT question FROM questions";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
+  while ($row = $result->fetch_assoc()) {
     $truthQuestions[] = $row['question'];
   }
 }
@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 $sql = "SELECT dare_text FROM dare_challenges";
 $result = $conn->query($sql);
 if ($result && $result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
+  while ($row = $result->fetch_assoc()) {
     $dareChallenges[] = $row['dare_text'];
   }
 }
@@ -227,17 +227,6 @@ $conn->close();
       width: 100px;
     }
 
-    .arrow {
-      width: 0;
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-bottom: 30px solid black;
-      position: absolute;
-      rotate: 180deg;
-      top: 13%;
-    }
-
     @media screen and (max-width: 850px) {
       .wheel-container {
         display: flex;
@@ -256,7 +245,6 @@ $conn->close();
         height: fit-content;
       }
     }
-    
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
     rel="stylesheet">
@@ -269,8 +257,6 @@ $conn->close();
         <input type="text" id="itemInput" placeholder="Masukkan nama anda!" />
         <button class="add-button" id="addButton">Tambah Pemain</button>
       </div>
-
-      <div class="arrow"></div> <!-- Add the arrow element here -->
 
       <canvas id="wheel" width="450" height="450"></canvas>
       <button id="spinButton">Spin!</button>
@@ -334,29 +320,46 @@ $conn->close();
     const drawRouletteWheel = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      if (segments.length === 0) return;
-
-      arc = Math.PI / (segments.length / 2);
-
-      segments.forEach((segment, i) => {
-        const angle = startAngle + i * arc;
-        ctx.fillStyle = colors[i % colors.length];
+      if (segments.length === 0) {
+        ctx.fillStyle = "#ddd";
         ctx.beginPath();
-        ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, angle, angle + arc, false);
-        ctx.arc(canvas.width / 2, canvas.height / 2, 0, angle + arc, angle, true);
-        ctx.stroke();
+        ctx.arc(225, 225, 215, 0, 2 * Math.PI);
         ctx.fill();
-        ctx.save();
+      } else {
+        arc = Math.PI / (segments.length / 2);
 
-        ctx.fillStyle = "white";
-        ctx.translate(
-          canvas.width / 2 + Math.cos(angle + arc / 2) * (canvas.width / 4),
-          canvas.height / 2 + Math.sin(angle + arc / 2) * (canvas.height / 4)
-        );
-        ctx.rotate(angle + arc / 2 + Math.PI / 2);
-        ctx.fillText(segment, -ctx.measureText(segment).width / 2, 0);
-        ctx.restore();
-      });
+        segments.forEach((segment, i) => {
+          const angle = startAngle + i * arc;
+          ctx.fillStyle = colors[i % colors.length];
+          ctx.beginPath();
+          ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, angle, angle + arc, false);
+          ctx.arc(canvas.width / 2, canvas.height / 2, 0, angle + arc, angle, true);
+          ctx.stroke();
+          ctx.fill();
+          ctx.save();
+
+          ctx.fillStyle = "white";
+          ctx.translate(
+            canvas.width / 2 + Math.cos(angle + arc / 2) * (canvas.width / 4),
+            canvas.height / 2 + Math.sin(angle + arc / 2) * (canvas.height / 4)
+          );
+          ctx.rotate(angle + arc / 2 + Math.PI / 2);
+          ctx.fillText(segment, -ctx.measureText(segment).width / 2, 0);
+          ctx.restore();
+        });
+      }
+
+      ctx.fillStyle = "black";
+      ctx.beginPath();
+      ctx.moveTo(225 - 4, 200 - (200 + 20));
+      ctx.lineTo(225 + 4, 200 - (200 + 20));
+      ctx.lineTo(225 + 4, 200 - (200 - 50));
+      ctx.lineTo(225 + 9, 200 - (200 - 50));
+      ctx.lineTo(225 + 0, 200 - (200 - 60));
+      ctx.lineTo(225 - 9, 200 - (200 - 50));
+      ctx.lineTo(225 - 4, 200 - (200 - 50));
+      ctx.lineTo(225 - 4, 200 - (200 + 20));
+      ctx.fill();
     };
 
     const spin = () => {
