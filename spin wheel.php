@@ -428,6 +428,13 @@ $conn->close();
       }
     };
 
+    // Event listener for Enter key press
+    itemInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        handleAddButtonClick();
+      }
+    });
+
     const updateScores = () => {
       scoresDiv.innerHTML = '';
       for (const player in scores) {
