@@ -246,17 +246,22 @@ $conn->close();
       }
     }
   </style>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    rel="stylesheet">
 </head>
 
 <body>
   <div class="wheel-container">
-    <div class="input-container">
-      <input type="text" id="itemInput" placeholder="Masukan Nama Pemain!" />
-      <button class="add-button" id="addButton">Tambah Pemain</button>
+    <div class="controls-container">
+      <div class="input-container">
+        <input type="text" id="itemInput" placeholder="Masukkan nama anda!" />
+        <button class="add-button" id="addButton">Tambah Pemain</button>
+      </div>
+
+      <canvas id="wheel" width="450" height="450"></canvas>
+      <button id="spinButton">Spin!</button>
     </div>
-    <canvas id="wheel" width="500" height="500"></canvas>
-    <button id="spinButton">Spin!</button>
+
     <div class="scoreboard" id="scoreboard">
       <h3>Scoreboard</h3>
       <div id="scores"></div>
