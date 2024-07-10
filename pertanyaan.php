@@ -6,10 +6,9 @@ if (isset($_GET['image'])) {
 $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 'bg1.png';
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
         rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pertanyaan.css">
     <style>
         body {
@@ -30,6 +28,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -43,41 +42,76 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </nav>
 
-    <div class="tod">
-        <a href="#" class="btn btn-truth active">Truth</a>
-        <a href="dare.php" class="btn btn-dare">Dare</a>
-    </div>
-
     <div class="container mt-5">
-        
-        
         <div class="row">
-            <?php
-            include 'db.php';
-            $sql = "SELECT id, question FROM questions";
-            $result = $conn->query($sql);
+            <div class="col-md-6">
+                <div class="container">
+                    <div class="tambah">
+                        <h3>Truth</h3>
+                        <a href="tambah_pertanyaan.php"><i class="bi bi-plus-circle"></i></a>
+                    </div>
+                    <?php
+                    include 'db.php';
+                    $sql = "SELECT id, question FROM questions WHERE type = 'truth'";
+                    $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo '
-                    <div class="col-md-4 mb-3">
-                        <div class="card text-bg-light custom-card">
-                            <div class="card-header">Truth
-                                <div class="edit-apus">
-                                    <a href="hapus_pertanyaan.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
-                                    <a href="edit_question.php?id=' . $row['id'] . '" class="btn btn-outline-primary btn-sm" onclick="return confirm(\'Yakin ingin mengedit?\')"><i class="bi bi-pencil-square"></i></a>
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '
+                            <div class="mb-3">
+                                <div class="card text-bg-light custom-card">
+                                    <div class="card-header">Truth
+                                        <div class="edit-apus">
+                                            <a href="hapus_pertanyaan.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
+                                            <a href="edit_question.php?id=' . $row['id'] . '" class="btn btn-outline-primary btn-sm" onclick="return confirm(\'Yakin ingin mengedit?\')"><i class="bi bi-pencil-square"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">' . htmlspecialchars($row['question']) . '</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">' . htmlspecialchars($row['question']) . '</p>
-                            </div>
-                        </div>
-                    </div>';
-                }
-            } else {
-                echo "No questions found";
-            }
-            ?>
+                            </div>';
+                        }
+                    } else {
+                        echo "No truth questions found";
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container">
+                    <div class="tambah">
+                        <h3>Dare</h3>
+                        <a href="tambah_tantangan.php"><i class="bi bi-plus-circle"></i></a>
+                    </div>
+                    <?php
+                    include 'db.php';
+                    $sql = "SELECT id, dare_text FROM dare_challenges";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '
+                            <div class="mb-3">
+                                <div class="card text-bg-light custom-card">
+                                    <div class="card-header">Dare
+                                        <div class="edit-apus">
+                                            <a href="delete_dare.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
+                                            <a href="edit_dare.php?id=' . $row['id'] . '" class="btn btn-outline-primary btn-sm" onclick="return confirm(\'Yakin ingin mengedit tantangan?\')"><i class="bi bi-pencil-square"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">' . htmlspecialchars($row['dare_text']) . '</p>
+                                    </div>
+                                </div>
+                            </div>';
+                        }
+                    } else {
+                        echo "No dare challenges found";
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -87,4 +121,5 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </a>
     </div>
 </body>
+
 </html>

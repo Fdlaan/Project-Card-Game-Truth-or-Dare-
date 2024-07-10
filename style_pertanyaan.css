@@ -105,16 +105,11 @@ body {
 }
 
 .tambah a {
-  position: absolute;
-  top: 8px;
-  right: 15px;
-  font-size: 4rem;
+  font-size: 2rem;
   color: black;
 }
 .card-header {
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);  
 }
 
 .edit-apus{
@@ -159,4 +154,19 @@ body {
 .btn-truth:hover,
 .btn-dare:hover {
   background-color: darkgrey;
+}
+
+.container .tambah {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px 10px 0px 0px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tambah h3 {
+  font-weight: bold;
+  margin-top: 5px;
 }

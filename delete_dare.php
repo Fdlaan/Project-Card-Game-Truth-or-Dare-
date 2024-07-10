@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
     // Eksekusi query dan cek apakah berhasil
     if ($conn->query($sql) === TRUE) {
         // Jika berhasil, arahkan kembali ke dare.php
-        header("Location: dare.php");
+        header("Location: pertanyaan.php");
         exit();
     } else {
         // Jika gagal, tampilkan pesan error
