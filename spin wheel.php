@@ -462,5 +462,4 @@ $conn->close();
     drawRouletteWheel();
   </script>
 </body>
-
 </html>
