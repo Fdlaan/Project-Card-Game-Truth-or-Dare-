@@ -72,9 +72,9 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                                 </div>
                             </div>';
                         }
-                    } else {
-                        echo "No truth questions found";
-                    }
+                    } 
+                        
+                  
                     ?>
                 </div>
             </div>
@@ -106,9 +106,9 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                                 </div>
                             </div>';
                         }
-                    } else {
-                        echo "No dare challenges found";
-                    }
+                    } 
+                       
+                
                     ?>
                 </div>
             </div>
