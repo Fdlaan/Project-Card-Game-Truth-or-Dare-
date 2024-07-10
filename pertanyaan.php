@@ -8,6 +8,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +28,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -44,14 +46,17 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         <div class="row">
             <div class="col-md-6">
                 <div class="container">
-                    <h3>Truth</h3>
+                    <div class="tambah">
+                        <h3>Truth</h3>
+                        <a href="tambah_pertanyaan.php"><i class="bi bi-plus-circle"></i></a>
+                    </div>
                     <?php
                     include 'db.php';
                     $sql = "SELECT id, question FROM questions WHERE type = 'truth'";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
+                        while ($row = $result->fetch_assoc()) {
                             echo '
                             <div class="mb-3">
                                 <div class="card text-bg-light custom-card">
@@ -75,14 +80,17 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             </div>
             <div class="col-md-6">
                 <div class="container">
-                    <h3>Dare</h3>
+                    <div class="tambah">
+                        <h3>Dare</h3>
+                        <a href="tambah_tantangan.php"><i class="bi bi-plus-circle"></i></a>
+                    </div>
                     <?php
                     include 'db.php';
                     $sql = "SELECT id, dare_text FROM dare_challenges";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
+                        while ($row = $result->fetch_assoc()) {
                             echo '
                             <div class="mb-3">
                                 <div class="card text-bg-light custom-card">
@@ -113,4 +121,5 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </a>
     </div>
 </body>
+
 </html>

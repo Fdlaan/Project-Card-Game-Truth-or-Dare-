@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "UPDATE dare_challenges SET dare_text = '$dare_text' WHERE id = $id";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: dare.php");
+        header("Location: pertanyaan.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
