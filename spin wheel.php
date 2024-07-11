@@ -247,8 +247,7 @@ $conn->close();
 
     .menu-Modal button{
       border-radius: 15px;
-      margin-inline: 43%;
-      background-color: white;
+      margin-inline: 43%; 
     }
 
     .modal button {
@@ -322,10 +321,10 @@ $conn->close();
 
   <!-- Modal for menu options -->
   <div id="menuModal" class="menu-Modal">
-    <p>Pilih tindakan:</p>
-    <button id="navigateButton">Keluar</button>
-    <button id="kartuButton">kartu</button>
-    <button id="cancelButton">Batal</button>
+    <p>Keluar dari permainan?</p>
+    <button id="navigateButton" class="btn btn-danger">Keluar</button>
+    <button id="kartuButton" class="btn btn-primary">kartu</button>
+    <button id="cancelButton" class="btn btn-primary">Batal</button>
   </div>
 
   <script>
