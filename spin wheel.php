@@ -48,7 +48,7 @@ $conn->close();
       padding: 15px;
       background-image: url('assets/<?php echo $image; ?>');
       background-size: cover;
-      background-repeat: no-repeat;
+      background-repeat: repeat;
       background-position: center;
     }
 
@@ -220,6 +220,10 @@ $conn->close();
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border: 2px solid white;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      flex-direction: column;
       z-index: 1;
     }
 
@@ -253,18 +257,19 @@ $conn->close();
     }
 
     .menu-Modal #navigateButton{
-      background-color:red;
-      color:white;
+      color: black;
     }
 
     .menu-Modal #kartuButton{
-      background-color: rgba(74, 144, 226);
-      color: white;
+      color:  black;
     }
 
     .menu-Modal #cancelButton {
-      background-color:rgba(74, 144, 226);
+      background-color: rgba(74, 144, 226);
       color: white;
+      width: 100px;
+      position: relative;
+      margin-inline: 40%;
     }
 
     .modal button {
@@ -340,8 +345,8 @@ $conn->close();
   <div id="menuModal" class="menu-Modal">
     <p>Keluar dari permainan?</p>
     <button id="kartuButton">Daftar Kartu</button>
+    <button id="navigateButton">Menu Awal</button>
     <button id="cancelButton">Batal</button>
-    <button id="navigateButton"">Keluar</button>
   </div>
 
   <script>
