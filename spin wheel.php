@@ -262,6 +262,11 @@ $conn->close();
       color: white;
     }
 
+    .menu-Modal #cancelButton {
+      background-color:rgba(74, 144, 226);
+      color: white;
+    }
+
     .modal button {
       border-radius: 15px;
       margin-inline: 43%;
@@ -334,9 +339,9 @@ $conn->close();
   <!-- Modal for menu options -->
   <div id="menuModal" class="menu-Modal">
     <p>Keluar dari permainan?</p>
-    <button id="navigateButton"">Keluar</button>
-    <button id="kartuButton">Kartu</button>
+    <button id="kartuButton">Daftar Kartu</button>
     <button id="cancelButton">Batal</button>
+    <button id="navigateButton"">Keluar</button>
   </div>
 
   <script>
