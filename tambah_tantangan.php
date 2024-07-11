@@ -1,20 +1,19 @@
 <?php
-include 'db.php'; // Pastikan file ini mengatur koneksi ke database dengan benar
+include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Ambil data dari formulir
-    $dare_text = $conn->real_escape_string($_POST['dare_challenges']); // Ambil data dari form dan sanitasi
+    
+    $dare_text = $conn->real_escape_string($_POST['dare_challenges']); 
 
-    // Query untuk memasukkan data baru ke database
+
     $sql = "INSERT INTO dare_challenges (dare_text) VALUES ('$dare_text')";
 
-    // Eksekusi query dan cek apakah berhasil
+
     if ($conn->query($sql) === TRUE) {
-        // Jika berhasil, arahkan kembali ke dare.php
+
         header("Location: pertanyaan.php");
         exit();
     } else {
-        // Jika gagal, tampilkan pesan error
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
