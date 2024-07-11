@@ -13,10 +13,8 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Pertanyaan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
-        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pertanyaan.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -103,8 +101,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <div class="container">
                     <div class="tambah d-flex justify-content-between align-items-center mb-3">
                         <h3>Truth</h3>
-                        <a href="tambah_pertanyaan.php" data-bs-toggle="modal" data-bs-target="#addTruthModal"><i
-                                class="bi bi-plus-circle"></i></a>
+                        <a href="tambah_pertanyaan.php" data-bs-toggle="modal" data-bs-target="#addTruthModal"><i class="bi bi-plus-circle"></i></a>
                     </div>
                     <?php
                     include 'db.php';
@@ -115,12 +112,12 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                         while ($row = $result->fetch_assoc()) {
                             echo '
                             <div class="mb-3">
-                                <div class="card text-bg-light custom-card">
+                                <div class="card text-bg-light custom-card" data-id="' . $row['id'] . '" data-type="truth" data-question="' . htmlspecialchars($row['question']) . '">
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                         Truth
                                         <div class="edit-apus">
                                             <a href="hapus_pertanyaan.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
-                                            <a href="edit_question.php?id=' . $row['id'] . '" class="btn btn-outline-primary btn-sm" onclick="return confirm(\'Yakin ingin mengedit?\')"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -137,8 +134,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <div class="container">
                     <div class="tambah d-flex justify-content-between align-items-center mb-3">
                         <h3>Dare</h3>
-                        <a href="tambah_tantangan.php" data-bs-toggle="modal" data-bs-target="#addDareModal"><i
-                                class="bi bi-plus-circle"></i></a>
+                        <a href="tambah_tantangan.php" data-bs-toggle="modal" data-bs-target="#addDareModal"><i class="bi bi-plus-circle"></i></a>
                     </div>
                     <?php
                     include 'db.php';
@@ -149,12 +145,12 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                         while ($row = $result->fetch_assoc()) {
                             echo '
                             <div class="mb-3">
-                                <div class="card text-bg-light custom-card">
+                                <div class="card text-bg-light custom-card" data-id="' . $row['id'] . '" data-type="dare" data-question="' . htmlspecialchars($row['dare_text']) . '">
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                         Dare
                                         <div class="edit-apus">
                                             <a href="delete_dare.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
-                                            <a href="edit_dare.php?id=' . $row['id'] . '" class="btn btn-outline-primary btn-sm" onclick="return confirm(\'Yakin ingin mengedit tantangan?\')"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -174,6 +170,30 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         <a href="spin wheel.php" class="btn btn-primary">
             NEXT
         </a>
+    </div>
+
+    <!-- Modal for Editing Question/Dare -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Pertanyaan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="editForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="editQuestion" class="form-label">Pertanyaan</label>
+                            <input type="text" class="form-control" id="editQuestion" name="question" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveEdit">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Modal for Adding Truth Question -->
@@ -224,9 +244,34 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12vGqj5XR5lbP1xbHFLZ6xFl+a6jXk9ip3Nwi6xqBguXerN9"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var editButtons = document.querySelectorAll('.edit-btn');
+            var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+            var editForm = document.getElementById('editForm');
+            var editQuestionInput = document.getElementById('editQuestion');
+            var saveEditButton = document.getElementById('saveEdit');
+            var currentCard;
+
+            editButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    var card = event.target.closest('.card');
+                    currentCard = card;
+                    var question = card.dataset.question;
+                    editQuestionInput.value = question;
+                    editModal.show();
+                });
+            });
+
+            saveEditButton.addEventListener('click', function () {
+                var newQuestion = editQuestionInput.value;
+                currentCard.querySelector('.card-text').innerText = newQuestion;
+                currentCard.dataset.question = newQuestion;
+                editModal.hide();
+            });
+        });
+    </script>
 </body>
 
 </html>
