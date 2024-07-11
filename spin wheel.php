@@ -489,7 +489,7 @@ $conn->close();
       rotateWheel();
     });
 
-    addButton.addEventListener("click", () => {
+    const addSegment = () => {
       if (segments.length >= 5) {
         alert("Maksimal hanya 5 pemain saja!");
         return;
@@ -504,7 +504,15 @@ $conn->close();
       } else {
         alert("Tambahkan Pemain!");
       }
-    });
+    };
+
+    addButton.addEventListener("click", addSegment);
+
+    itemInput.addEventListener("keydown", (e) => {
+      if (e.key ===  "Enter") {
+        addSegment();
+      }
+    })
 
     truthButton.addEventListener("click", () => {
       const player = selectedPlayer.textContent.split(": ")[1];
