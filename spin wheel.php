@@ -210,6 +210,47 @@ $conn->close();
       padding: 5px;
     }
 
+    .menu-Modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border: 2px solid white;
+      z-index: 1;
+    }
+
+    .menu-Modal {
+      border-radius: 15px;
+      width: 500px;
+      background-image: url('assets/<?php echo $image; ?>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .menu-Modal p {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: #000000;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    .menu-Modal button{
+      border-radius: 15px;
+      margin-inline: 43%;
+      background-color: white;
+    }
+
     .modal button {
       border-radius: 15px;
       margin-inline: 43%;
@@ -277,6 +318,16 @@ $conn->close();
   <div class="back">
     <a href="pertanyaan.php"><i class="bi bi-arrow-left-circle"></i></a>
   </div>
+  <a href="title.php" id="titleLink"><i class="bi bi-x-circle"></i></a>
+
+  <!-- Modal for menu options -->
+  <div id="menuModal" class="menu-Modal">
+    <p>Pilih tindakan:</p>
+    <button id="navigateButton">Keluar</button>
+    <button id="kartuButton">kartu</button>
+    <button id="cancelButton">Batal</button>
+  </div>
+
   <script>
     const canvas = document.getElementById("wheel");
     const ctx = canvas.getContext("2d");
@@ -462,10 +513,34 @@ $conn->close();
       okButton.style.display = "none";
     });
 
+    // Add this script to handle the click event
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const titleLink = document.getElementById('titleLink');
+      const menuModal = document.getElementById('menuModal');
+      const navigateButton = document.getElementById('navigateButton');
+      const kartuButton = document.getElementById('kartuButton');
+      const cancelButton = document.getElementById('cancelButton');
+
+      titleLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        menuModal.style.display = 'block';
+      });
+
+      navigateButton.addEventListener('click', function() {
+        window.location.href = "title.php";
+      });
+
+      kartuButton.addEventListener('click', function() {
+        window.location.href = "kartu.php";
+      });
+
+      cancelButton.addEventListener('click', function() {
+        menuModal.style.display = 'none';
+      });
+    });
+
     drawRouletteWheel();
   </script>
-
-  <a href="title.php"><i class="bi bi-x-circle"></i></a>
 </body>
 
 </html>
