@@ -26,14 +26,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <video class="embed-responsive-item w-100" controls>
-                            <source src="assets/WhatsApp Video 2024-03-12 at 18.31.17.mp4" type="video/mp4">
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 350px;">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/bandicam 2024-07-11 15-52-56-397.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Skip</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" onclick="window.location.href = 'kartu.php'">Start Game</button>
                 </div>
             </div>
         </div>
