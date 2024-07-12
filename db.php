@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = ""; // sesuaikan dengan password MySQL Anda
+$password = ""; 
 $dbname = "TruthOrDare";
 
 // Buat koneksi

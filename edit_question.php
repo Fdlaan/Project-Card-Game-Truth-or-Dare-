@@ -2,7 +2,7 @@
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Simpan perubahan
+
     $id = $_POST['id'];
     $question = $conn->real_escape_string($_POST['question']);
 
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error updating record: " . $conn->error;
     }
 } else {
-    // Tampilkan form edit
+
     $id = $_GET['id'];
     $sql = "SELECT id, question FROM questions WHERE id=$id";
     $result = $conn->query($sql);

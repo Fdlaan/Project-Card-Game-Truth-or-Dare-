@@ -28,6 +28,15 @@ button {
     height: auto;
 }
 
+.button p{
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+
 p {
     position: relative;
     color: rgb(0, 0, 0);

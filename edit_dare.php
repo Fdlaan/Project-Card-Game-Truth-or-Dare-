@@ -1,15 +1,15 @@
 <?php
-include 'db.php'; // Pastikan file ini mengatur koneksi ke database dengan benar
+include 'db.php'; 
 
-// Cek apakah ID ada pada URL
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Ambil data dare dari database berdasarkan ID
+
     $sql = "SELECT * FROM dare_challenges WHERE id = $id";
     $result = $conn->query($sql);
 
-    // Cek apakah data ada
+
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $dare_text = $row['dare_text'];
@@ -22,11 +22,11 @@ if (isset($_GET['id'])) {
     exit();
 }
 
-// Proses form jika ada request POST
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dare_text = $conn->real_escape_string($_POST['dare_text']);
 
-    // Query untuk update data
+  
     $sql = "UPDATE dare_challenges SET dare_text = '$dare_text' WHERE id = $id";
 
     if ($conn->query($sql) === TRUE) {

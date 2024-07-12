@@ -172,7 +172,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </a>
     </div>
 
-    <!-- Modal for Editing Question/Dare -->
+
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -196,7 +196,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </div>
 
-    <!-- Modal for Adding Truth Question -->
+
     <div class="modal fade" id="addTruthModal" tabindex="-1" aria-labelledby="addTruthModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -220,7 +220,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </div>
 
-    <!-- Modal for Adding Dare Challenge -->
+    
     <div class="modal fade" id="addDareModal" tabindex="-1" aria-labelledby="addDareModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

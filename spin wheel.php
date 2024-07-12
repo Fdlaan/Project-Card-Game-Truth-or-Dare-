@@ -339,9 +339,8 @@ $conn->close();
   <div class="back">
     <a href="pertanyaan.php"><i class="bi bi-arrow-left-circle"></i></a>
   </div>
-  <a href="title.php" id="titleLink"><i class="bi bi-x-circle"></i></a>
+  <a href="index.php" id="titleLink"><i class="bi bi-x-circle"></i></a>
 
-  <!-- Modal for menu options -->
   <div id="menuModal" class="menu-Modal">
     <p>Keluar dari permainan?</p>
     <button id="kartuButton">Daftar Kartu</button>
@@ -542,7 +541,7 @@ $conn->close();
       okButton.style.display = "none";
     });
 
-    // Add this script to handle the click event
+
     document.addEventListener('DOMContentLoaded', (event) => {
       const titleLink = document.getElementById('titleLink');
       const menuModal = document.getElementById('menuModal');
