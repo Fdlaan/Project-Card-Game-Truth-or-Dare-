@@ -1,21 +1,20 @@
 <?php
 include 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
-    $dare_text = $conn->real_escape_string($_POST['dare_challenges']); 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $dareText = $_POST['dare_text'];
 
 
-    $sql = "INSERT INTO dare_challenges (dare_text) VALUES ('$dare_text')";
-
+    $sql = "INSERT INTO dare_challenges (dare_text) VALUES ('$dareText')";
 
     if ($conn->query($sql) === TRUE) {
-
         header("Location: pertanyaan.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+    $conn->close();
 }
 ?>
 
