@@ -30,10 +30,10 @@ button {
 
 p {
     position: relative;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     margin-top: 15px;
-    font-size: 32px;
+    font-size: 25px;
 }
 
 img {
@@ -41,4 +41,8 @@ img {
     width: auto;
     height: 60vh;
     border-radius: 50px;
+}
+
+.modal-body {
+    font-size: 2em;
 }

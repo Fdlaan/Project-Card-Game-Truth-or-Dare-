@@ -26,7 +26,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 350px;">
+                    <p>Selamat datang di game Truth Or Dare</p>
+                    <ol>
+                        <li>langkah 1</li>
+                        <li>langkah 2</li>
+                        <li>langkah 3</li>
+                        <li>langka 4</li>
+                    </ol>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 365px;">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/bandicam 2024-07-11 15-52-56-397.mp4" type="video/mp4">
                         </video>
