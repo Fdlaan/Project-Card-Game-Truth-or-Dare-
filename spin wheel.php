@@ -555,7 +555,7 @@ $conn->close();
       });
 
       navigateButton.addEventListener('click', function() {
-        window.location.href = "title.php";
+        window.location.href = "index.php";
       });
 
       kartuButton.addEventListener('click', function() {
