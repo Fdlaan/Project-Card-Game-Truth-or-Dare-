@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Index</title>
+    <link href="assets/TOD-removebg-preview.png" rel="icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -28,14 +29,15 @@
                 <div class="modal-body">
                     <p>Selamat datang di game Truth Or Dare</p>
                     <ol>
-                        <li>langkah 1</li>
-                        <li>langkah 2</li>
-                        <li>langkah 3</li>
-                        <li>langka 4</li>
+                        <li>Start game</li>
+                        <li>Pilih kartu</li>
+                        <li>Daftar pertanyaan</li>
+                        <li>Masukan nama pemain</li>
+                        <li>Tekan button spin untuk spin pemaain</li>
                     </ol>
-                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 365px;">
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
-                            <source src="assets/bandicam 2024-07-11 15-52-56-397.mp4" type="video/mp4">
+                            <source src="assets/lv_0_20240715171403.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
