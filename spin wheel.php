@@ -39,6 +39,7 @@ $conn->close();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spinning Wheel</title>
+  <link rel="icon" href="assets/TOD-removebg-preview.png">
   <style>
     body {
       display: flex;
