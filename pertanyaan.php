@@ -13,6 +13,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Pertanyaan</title>
+    <link rel="icon" href="assets/TOD-removebg-preview.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_pertanyaan.css">
@@ -116,7 +117,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                         Truth
                                         <div class="edit-apus">
-                                            <a href="hapus_pertanyaan.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm delete-btn"><i class="bi bi-trash"></i></a>
                                             <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
                                         </div>
                                     </div>
@@ -149,7 +150,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                         Dare
                                         <div class="edit-apus">
-                                            <a href="delete_dare.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
+                                            <a href="#" class="btn btn-outline-danger btn-sm delete-btn"><i class="bi bi-trash"></i></a>
                                             <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
                                         </div>
                                     </div>
@@ -220,7 +221,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </div>
 
-    
+
     <div class="modal fade" id="addDareModal" tabindex="-1" aria-labelledby="addDareModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -248,6 +249,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var editButtons = document.querySelectorAll('.edit-btn');
+            var deleteButtons = document.querySelectorAll('.delete-btn');
             var editModal = new bootstrap.Modal(document.getElementById('editModal'));
             var editForm = document.getElementById('editForm');
             var editQuestionInput = document.getElementById('editQuestion');
@@ -269,6 +271,15 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 currentCard.querySelector('.card-text').innerText = newQuestion;
                 currentCard.dataset.question = newQuestion;
                 editModal.hide();
+            });
+
+            deleteButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    if (confirm('Yakin ingin hapus?')){
+                        var card = event.target.closest('.card');
+                        card.remove();
+                    }
+                });
             });
         });
     </script>
