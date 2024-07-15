@@ -247,42 +247,101 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var editButtons = document.querySelectorAll('.edit-btn');
-            var deleteButtons = document.querySelectorAll('.delete-btn');
-            var editModal = new bootstrap.Modal(document.getElementById('editModal'));
-            var editForm = document.getElementById('editForm');
-            var editQuestionInput = document.getElementById('editQuestion');
-            var saveEditButton = document.getElementById('saveEdit');
-            var currentCard;
+    document.addEventListener('DOMContentLoaded', function () {
+        var editButtons = document.querySelectorAll('.edit-btn');
+        var deleteButtons = document.querySelectorAll('.delete-btn');
+        var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+        var editQuestionInput = document.getElementById('editQuestion');
+        var saveEditButton = document.getElementById('saveEdit');
+        var currentCard;
 
-            editButtons.forEach(function (button) {
-                button.addEventListener('click', function (event) {
-                    var card = event.target.closest('.card');
-                    currentCard = card;
-                    var question = card.dataset.question;
-                    editQuestionInput.value = question;
-                    editModal.show();
-                });
-            });
-
-            saveEditButton.addEventListener('click', function () {
-                var newQuestion = editQuestionInput.value;
-                currentCard.querySelector('.card-text').innerText = newQuestion;
-                currentCard.dataset.question = newQuestion;
-                editModal.hide();
-            });
-
-            deleteButtons.forEach(function (button) {
-                button.addEventListener('click', function (event) {
-                    if (confirm('Yakin ingin hapus?')){
-                        var card = event.target.closest('.card');
-                        card.remove();
-                    }
-                });
+        editButtons.forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                var card = event.target.closest('.card');
+                currentCard = card;
+                var question = card.dataset.question;
+                editQuestionInput.value = question;
+                editModal.show();
             });
         });
-    </script>
+
+        saveEditButton.addEventListener('click', function () {
+            var newQuestion = editQuestionInput.value;
+            currentCard.querySelector('.card-text').innerText = newQuestion;
+            currentCard.dataset.question = newQuestion;
+            editModal.hide();
+        });
+
+        deleteButtons.forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                if (confirm('Yakin ingin menghapus?')){
+                    var card = event.target.closest('.card');
+                    card.remove();
+                }
+            });
+        });
+
+        // Menangani penambahan pertanyaan Truth
+        document.getElementById('addTruthForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var question = document.getElementById('truthQuestion').value;
+            addQuestion('truth', question);
+            document.getElementById('addTruthForm').reset();
+            var addTruthModal = bootstrap.Modal.getInstance(document.getElementById('addTruthModal'));
+            addTruthModal.hide();
+        });
+
+        // Menangani penambahan tantangan Dare
+        document.getElementById('addDareForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var question = document.getElementById('dareText').value;
+            addQuestion('dare', question);
+            document.getElementById('addDareForm').reset();
+            var addDareModal = bootstrap.Modal.getInstance(document.getElementById('addDareModal'));
+            addDareModal.hide();
+        });
+
+        function addQuestion(type, question) {
+            var containerId = type === 'truth' ? 'truth-list' : 'dare-list';
+            var container = document.getElementById(containerId);
+
+            var cardHtml = `
+                <div class="mb-3">
+                    <div class="card text-bg-light custom-card" data-type="${type}" data-question="${question}">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            ${type.charAt(0).toUpperCase() + type.slice(1)}
+                            <div class="edit-apus">
+                                <a href="#" class="btn btn-outline-danger btn-sm delete-btn"><i class="bi bi-trash"></i></a>
+                                <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">${question}</p>
+                        </div>
+                    </div>
+                </div>`;
+
+            container.insertAdjacentHTML('beforeend', cardHtml);
+
+            // Tambahkan event listener untuk tombol edit dan delete baru
+            var newCard = container.lastElementChild;
+            newCard.querySelector('.edit-btn').addEventListener('click', function (event) {
+                var card = event.target.closest('.card');
+                currentCard = card;
+                var question = card.dataset.question;
+                editQuestionInput.value = question;
+                editModal.show();
+            });
+            newCard.querySelector('.delete-btn').addEventListener('click', function (event) {
+                if (confirm('Yakin ingin menghapus?')){
+                    var card = event.target.closest('.card');
+                    card.remove();
+                }
+            });
+        }
+    });
+</script>
+
 </body>
 
 </html>
