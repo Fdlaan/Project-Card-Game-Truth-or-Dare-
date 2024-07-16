@@ -102,66 +102,67 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 <div class="container">
                     <div class="tambah d-flex justify-content-between align-items-center mb-3">
                         <h3>Truth</h3>
-                        <a href="tambah_pertanyaan.php" data-bs-toggle="modal" data-bs-target="#addTruthModal"><i class="bi bi-plus-circle"></i></a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#addTruthModal"><i class="bi bi-plus-circle"></i></a>
                     </div>
-                    <?php
-                    include 'db.php';
-                    $sql = "SELECT id, question FROM questions WHERE type = 'truth'";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo '
-                            <div class="mb-3">
-                                <div class="card text-bg-light custom-card" data-id="' . $row['id'] . '" data-type="truth" data-question="' . htmlspecialchars($row['question']) . '">
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        Truth
-                                        <div class="edit-apus">
-                                            <a href="#" class="btn btn-outline-danger btn-sm delete-btn"><i class="bi bi-trash"></i></a>
-                                            <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
+                    <div id="truth-list">
+                        <?php
+                        include 'db.php';
+                        $sql = "SELECT id, question FROM questions WHERE type = 'truth'";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '
+                                <div class="mb-3">
+                                    <div class="card text-bg-light custom-card" data-id="' . $row['id'] . '" data-type="truth" data-question="' . htmlspecialchars($row['question']) . '">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            Truth
+                                            <div class="edit-apus">
+                                                <a href="#" class="btn btn-outline-danger btn-sm delete-btn" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
+                                                <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">' . htmlspecialchars($row['question']) . '</p>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="card-text">' . htmlspecialchars($row['question']) . '</p>
-                                    </div>
-                                </div>
-                            </div>';
+                                </div>';
+                            }
                         }
-                    }
-                    ?>
+                        ?>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="container">
                     <div class="tambah d-flex justify-content-between align-items-center mb-3">
                         <h3>Dare</h3>
-                        <a href="tambah_tantangan.php" data-bs-toggle="modal" data-bs-target="#addDareModal"><i class="bi bi-plus-circle"></i></a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#addDareModal"><i class="bi bi-plus-circle"></i></a>
                     </div>
-                    <?php
-                    include 'db.php';
-                    $sql = "SELECT id, dare_text FROM dare_challenges";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo '
-                            <div class="mb-3">
-                                <div class="card text-bg-light custom-card" data-id="' . $row['id'] . '" data-type="dare" data-question="' . htmlspecialchars($row['dare_text']) . '">
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        Dare
-                                        <div class="edit-apus">
-                                            <a href="#" class="btn btn-outline-danger btn-sm delete-btn"><i class="bi bi-trash"></i></a>
-                                            <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
+                    <div id="dare-list">
+                        <?php
+                        $sql = "SELECT id, dare_text FROM dare_challenges";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '
+                                <div class="mb-3">
+                                    <div class="card text-bg-light custom-card" data-id="' . $row['id'] . '" data-type="dare" data-question="' . htmlspecialchars($row['dare_text']) . '">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            Dare
+                                            <div class="edit-apus">
+                                                <a href="#" class="btn btn-outline-danger btn-sm delete-btn" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
+                                                <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">' . htmlspecialchars($row['dare_text']) . '</p>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="card-text">' . htmlspecialchars($row['dare_text']) . '</p>
-                                    </div>
-                                </div>
-                            </div>';
+                                </div>';
+                            }
                         }
-                    }
-                    ?>
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,7 +173,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             NEXT
         </a>
     </div>
-
 
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -197,7 +197,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </div>
 
-
     <div class="modal fade" id="addTruthModal" tabindex="-1" aria-labelledby="addTruthModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -205,7 +204,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     <h5 class="modal-title" id="addTruthModalLabel">Tambah Pertanyaan Truth</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="tambah_pertanyaan.php" method="POST">
+                <form id="addTruthForm">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="truthQuestion" class="form-label">Pertanyaan</label>
@@ -221,7 +220,6 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
         </div>
     </div>
 
-
     <div class="modal fade" id="addDareModal" tabindex="-1" aria-labelledby="addDareModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -229,7 +227,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                     <h5 class="modal-title" id="addDareModalLabel">Tambah Tantangan Dare</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="tambah_tantangan.php" method="POST">
+                <form id="addDareForm">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="dareText" class="form-label">Tantangan</label>
@@ -247,101 +245,96 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var editButtons = document.querySelectorAll('.edit-btn');
-        var deleteButtons = document.querySelectorAll('.delete-btn');
-        var editModal = new bootstrap.Modal(document.getElementById('editModal'));
-        var editQuestionInput = document.getElementById('editQuestion');
-        var saveEditButton = document.getElementById('saveEdit');
-        var currentCard;
+        document.addEventListener('DOMContentLoaded', function () {
+            var editButtons = document.querySelectorAll('.edit-btn');
+            var deleteButtons = document.querySelectorAll('.delete-btn');
+            var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+            var editForm = document.getElementById('editForm');
+            var editQuestionInput = document.getElementById('editQuestion');
+            var saveEditButton = document.getElementById('saveEdit');
+            var currentCard;
 
-        editButtons.forEach(function (button) {
-            button.addEventListener('click', function (event) {
-                var card = event.target.closest('.card');
-                currentCard = card;
-                var question = card.dataset.question;
-                editQuestionInput.value = question;
-                editModal.show();
-            });
-        });
-
-        saveEditButton.addEventListener('click', function () {
-            var newQuestion = editQuestionInput.value;
-            currentCard.querySelector('.card-text').innerText = newQuestion;
-            currentCard.dataset.question = newQuestion;
-            editModal.hide();
-        });
-
-        deleteButtons.forEach(function (button) {
-            button.addEventListener('click', function (event) {
-                if (confirm('Yakin ingin menghapus?')){
+            editButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
                     var card = event.target.closest('.card');
-                    card.remove();
-                }
+                    currentCard = card;
+                    var question = card.dataset.question;
+                    editQuestionInput.value = question;
+                    editModal.show();
+                });
             });
-        });
 
-        // Menangani penambahan pertanyaan Truth
-        document.getElementById('addTruthForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var question = document.getElementById('truthQuestion').value;
-            addQuestion('truth', question);
-            document.getElementById('addTruthForm').reset();
-            var addTruthModal = bootstrap.Modal.getInstance(document.getElementById('addTruthModal'));
-            addTruthModal.hide();
-        });
+            saveEditButton.addEventListener('click', function () {
+                var newQuestion = editQuestionInput.value;
+                currentCard.querySelector('.card-text').innerText = newQuestion;
+                currentCard.dataset.question = newQuestion;
+                editModal.hide();
+            });
 
-        // Menangani penambahan tantangan Dare
-        document.getElementById('addDareForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            var question = document.getElementById('dareText').value;
-            addQuestion('dare', question);
-            document.getElementById('addDareForm').reset();
-            var addDareModal = bootstrap.Modal.getInstance(document.getElementById('addDareModal'));
-            addDareModal.hide();
-        });
+            deleteButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    if (confirm('Yakin ingin menghapus?')){
+                        var card = event.target.closest('.card');
+                        card.remove();
+                    }
+                });
+            });
 
-        function addQuestion(type, question) {
-            var containerId = type === 'truth' ? 'truth-list' : 'dare-list';
-            var container = document.getElementById(containerId);
+            document.getElementById('addTruthForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var question = document.getElementById('truthQuestion').value;
+                addQuestion('truth', question);
+                document.getElementById('addTruthForm').reset();
+                var addTruthModal = bootstrap.Modal.getInstance(document.getElementById('addTruthModal'));
+                addTruthModal.hide();
+            });
 
-            var cardHtml = `
-                <div class="mb-3">
-                    <div class="card text-bg-light custom-card" data-type="${type}" data-question="${question}">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            ${type.charAt(0).toUpperCase() + type.slice(1)}
-                            <div class="edit-apus">
-                                <a href="#" class="btn btn-outline-danger btn-sm delete-btn"><i class="bi bi-trash"></i></a>
-                                <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
+            document.getElementById('addDareForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var question = document.getElementById('dareText').value;
+                addQuestion('dare', question);
+                document.getElementById('addDareForm').reset();
+                var addDareModal = bootstrap.Modal.getInstance(document.getElementById('addDareModal'));
+                addDareModal.hide();
+            });
+
+            function addQuestion(type, question) {
+                var container = document.getElementById(`${type}-list`);
+
+                var cardHtml = `
+                    <div class="mb-3">
+                        <div class="card text-bg-light custom-card" data-type="${type}" data-question="${question}">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                ${type.charAt(0).toUpperCase() + type.slice(1)}
+                                <div class="edit-apus">
+                                    <a href="#" class="btn btn-outline-danger btn-sm delete-btn"><i class="bi bi-trash"></i></a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">${question}</p>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <p class="card-text">${question}</p>
-                        </div>
-                    </div>
-                </div>`;
+                    </div>`;
 
-            container.insertAdjacentHTML('beforeend', cardHtml);
+                container.insertAdjacentHTML('beforeend', cardHtml);
 
-            // Tambahkan event listener untuk tombol edit dan delete baru
-            var newCard = container.lastElementChild;
-            newCard.querySelector('.edit-btn').addEventListener('click', function (event) {
-                var card = event.target.closest('.card');
-                currentCard = card;
-                var question = card.dataset.question;
-                editQuestionInput.value = question;
-                editModal.show();
-            });
-            newCard.querySelector('.delete-btn').addEventListener('click', function (event) {
-                if (confirm('Yakin ingin menghapus?')){
+                var newCard = container.lastElementChild;
+                newCard.querySelector('.edit-btn').addEventListener('click', function (event) { 
                     var card = event.target.closest('.card');
-                    card.remove();
-                }
-            });
-        }
-    });
-</script>
-
+                    currentCard = card;
+                    editQuestionInput.value = card.dataset.question;
+                    editModal.show();
+                });
+                newCard.querySelector('.delete-btn').addEventListener('click', function (event) {
+                    if (confirm('Yakin ingin menghapus?')){
+                        var card = event.target.closest('.card');
+                        card.remove();
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
