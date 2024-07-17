@@ -1,5 +1,11 @@
 {
-    "rewrites": [
-        {"source": "/(.*)", "destination": "/index.php"}
+    "fuctions": {
+        "api/index.php": {
+            "runtime": "vercel-php@.6.1"
+        }
+    },
+
+    "routes": [
+        {"src": "/(.*)", "dest": "/api/index.php"}
     ]
 }
