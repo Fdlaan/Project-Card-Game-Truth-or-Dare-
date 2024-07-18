@@ -28,13 +28,25 @@
                 </div>
                 <div class="modal-body">
                     <p>Selamat datang di game Truth Or Dare</p>
-                    <ol>
-                        <li>Start game</li>
-                        <li>Pilih kartu</li>
-                        <li>Daftar pertanyaan</li>
-                        <li>Masukan nama pemain</li>
-                        <li>Tekan button spin untuk spin pemaain</li>
-                    </ol>
+                    <li>Langkah 1</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/lv_0_20240715171403.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <li>Langkah 2</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/pilih kartu 17.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <li>Langkah 3</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/lv_0_20240715171403.mp4" type="video/mp4">
+                        </video>
+                </div>
+                    <li>Langkah 4</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/lv_0_20240715171403.mp4" type="video/mp4">
