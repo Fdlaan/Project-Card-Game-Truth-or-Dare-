@@ -367,8 +367,8 @@ $conn->close();
 
     let segments = [];
     const colors = [
-      "#FF5733", "#33FF57", "#3357FF", "#F333FF",
-      "#FF33A1", "#FF8633", "#33FFDA", "#8333FF",
+      "#FF5733", "#33FF57", "#8333FF", "#F333FF",
+      "#FF33A1", 
     ];
 
     let startAngle = 0;
