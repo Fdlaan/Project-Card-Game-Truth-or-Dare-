@@ -31,27 +31,64 @@
                     <li>Langkah 1</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
-                            <source src="assets/lv_0_20240715171403.mp4" type="video/mp4">
+                            <source src="assets/daftar pertanyaan 17 - Copy.mp4" type="video/mp4">
                         </video>
                     </div>
                     <li>Langkah 2</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
-                            <source src="assets/pilih kartu 17.mp4" type="video/mp4">
+                            <source src="assets/pilih kartu 17 - Copy.mp4" type="video/mp4">
                         </video>
                     </div>
                     <li>Langkah 3</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
-                            <source src="assets/lv_0_20240715171403.mp4" type="video/mp4">
+                            <source src="assets/tambah pertanyaan truth 17 - Copy.mp4" type="video/mp4">
                         </video>
-                </div>
+                    </div>
                     <li>Langkah 4</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
-                            <source src="assets/lv_0_20240715171403.mp4" type="video/mp4">
+                            <source src="assets/edit pertanyaan truth 17.mp4" type="video/mp4">
                         </video>
                     </div>
+                    <li>Langkah 5</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/hapus pertanyaan truth 17 - Copy.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <li>Langkah 6</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/pindah ke halaman spin wheel 17.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <li>Langkah 7</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/input nama pemain spin wheel 17.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <li>Langkah 8</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/putar spin wheel 17 (truth).mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <li>Langkah 9</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/kembali ke halaman pilih kartu 17.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <li>Langkah 10</li>
+                    <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
+                        <video class="embed-responsive-item w-100" controls autoplay muted>
+                            <source src="assets/kembali ke menu awal 17.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Add more steps as needed -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" onclick="window.location.href = 'kartu.php'">Start Game</button>
