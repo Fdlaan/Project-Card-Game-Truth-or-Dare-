@@ -288,6 +288,7 @@ $conn->close();
 
     #spinButton {
       width: 100px;
+      margin-left: 50px;
     }
 
     @media screen and (max-width: 850px) {
@@ -322,7 +323,7 @@ $conn->close();
       </div>
 
       <canvas id="wheel" width="450" height="450"></canvas>
-      <button id="spinButton">Spin!</button>
+      <button id="spinButton">Spin</button>
     </div>
 
     <div class="scoreboard" id="scoreboard">
