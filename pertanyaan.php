@@ -151,7 +151,7 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                                             Dare
                                             <div class="edit-apus">
                                                 <a href="#" class="btn btn-outline-danger btn-sm delete-btn" onclick="return confirm(\'Yakin Ingin Menghapus?\')"><i class="bi bi-trash"></i></a>
-                                                <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square"></i></a>
+                                                <a href="#" class="btn btn-outline-primary btn-sm edit-btn"><i class="bi bi-pencil-square\"></i></a>
                                             </div>
                                         </div>
                                         <div class="card-body">
@@ -254,6 +254,46 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             var saveEditButton = document.getElementById('saveEdit');
             var currentCard;
 
+            function loadFromLocalStorage() {
+                var truthList = JSON.parse(localStorage.getItem('truthList')) || [];
+                var dareList = JSON.parse(localStorage.getItem('dareList')) || [];
+
+                truthList.forEach(function (item) {
+                    addQuestion('truth', item.question, item.id);
+                });
+
+                dareList.forEach(function (item) {
+                    addQuestion('dare', item.question, item.id);
+                });
+            }
+
+            function saveToLocalStorage() {
+                var truthCards = document.querySelectorAll('#truth-list .card');
+                var dareCards = document.querySelectorAll('#dare-list .card');
+
+                var truthList = [];
+                var dareList = [];
+
+                truthCards.forEach(function (card) {
+                    truthList.push({
+                        id: card.dataset.id,
+                        question: card.dataset.question
+                    });
+                });
+
+                dareCards.forEach(function (card) {
+                    dareList.push({
+                        id: card.dataset.id,
+                        question: card.dataset.question
+                    });
+                });
+
+                localStorage.setItem('truthList', JSON.stringify(truthList));
+                localStorage.setItem('dareList', JSON.stringify(dareList));
+            }
+
+            loadFromLocalStorage();
+
             editButtons.forEach(function (button) {
                 button.addEventListener('click', function (event) {
                     var card = event.target.closest('.card');
@@ -268,14 +308,16 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 var newQuestion = editQuestionInput.value;
                 currentCard.querySelector('.card-text').innerText = newQuestion;
                 currentCard.dataset.question = newQuestion;
+                saveToLocalStorage();
                 editModal.hide();
             });
 
             deleteButtons.forEach(function (button) {
                 button.addEventListener('click', function (event) {
-                    if (confirm('Yakin ingin menghapus?')){
+                    if (confirm('Yakin ingin menghapus?')) {
                         var card = event.target.closest('.card');
                         card.remove();
+                        saveToLocalStorage();
                     }
                 });
             });
@@ -283,7 +325,9 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             document.getElementById('addTruthForm').addEventListener('submit', function (event) {
                 event.preventDefault();
                 var question = document.getElementById('truthQuestion').value;
-                addQuestion('truth', question);
+                var id = Date.now();
+                addQuestion('truth', question, id);
+                saveToLocalStorage();
                 document.getElementById('addTruthForm').reset();
                 var addTruthModal = bootstrap.Modal.getInstance(document.getElementById('addTruthModal'));
                 addTruthModal.hide();
@@ -292,18 +336,20 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
             document.getElementById('addDareForm').addEventListener('submit', function (event) {
                 event.preventDefault();
                 var question = document.getElementById('dareText').value;
-                addQuestion('dare', question);
+                var id = Date.now();
+                addQuestion('dare', question, id);
+                saveToLocalStorage();
                 document.getElementById('addDareForm').reset();
                 var addDareModal = bootstrap.Modal.getInstance(document.getElementById('addDareModal'));
                 addDareModal.hide();
             });
 
-            function addQuestion(type, question) {
+            function addQuestion(type, question, id) {
                 var container = document.getElementById(`${type}-list`);
 
                 var cardHtml = `
                     <div class="mb-3">
-                        <div class="card text-bg-light custom-card" data-type="${type}" data-question="${question}">
+                        <div class="card text-bg-light custom-card" data-id="${id}" data-type="${type}" data-question="${question}">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 ${type.charAt(0).toUpperCase() + type.slice(1)}
                                 <div class="edit-apus">
@@ -320,16 +366,17 @@ $image = isset($_SESSION['background_image']) ? $_SESSION['background_image'] : 
                 container.insertAdjacentHTML('beforeend', cardHtml);
 
                 var newCard = container.lastElementChild;
-                newCard.querySelector('.edit-btn').addEventListener('click', function (event) { 
+                newCard.querySelector('.edit-btn').addEventListener('click', function (event) {
                     var card = event.target.closest('.card');
                     currentCard = card;
                     editQuestionInput.value = card.dataset.question;
                     editModal.show();
                 });
                 newCard.querySelector('.delete-btn').addEventListener('click', function (event) {
-                    if (confirm('Yakin ingin menghapus?')){
+                    if (confirm('Yakin ingin menghapus?')) {
                         var card = event.target.closest('.card');
                         card.remove();
+                        saveToLocalStorage();
                     }
                 });
             }
