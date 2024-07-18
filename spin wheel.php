@@ -288,6 +288,7 @@ $conn->close();
 
     #spinButton {
       width: 100px;
+      margin-left: 50px;
     }
 
     @media screen and (max-width: 850px) {
@@ -322,7 +323,7 @@ $conn->close();
       </div>
 
       <canvas id="wheel" width="450" height="450"></canvas>
-      <button id="spinButton">Spin!</button>
+      <button id="spinButton">Spin</button>
     </div>
 
     <div class="scoreboard" id="scoreboard">
@@ -366,8 +367,8 @@ $conn->close();
 
     let segments = [];
     const colors = [
-      "#FF5733", "#33FF57", "#3357FF", "#F333FF",
-      "#FF33A1", "#FF8633", "#33FFDA", "#8333FF",
+      "#FF5733", "#33FF57", "#8333FF", "#F333FF",
+      "#FF33A1", 
     ];
 
     let startAngle = 0;
