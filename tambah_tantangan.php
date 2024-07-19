@@ -4,16 +4,18 @@ include 'db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dareText = $_POST['dare_text'];
 
+    // Menggunakan prepared statements untuk keamanan
+    $stmt = $conn->prepare("INSERT INTO dare_challenges (dare_text) VALUES (?)");
+    $stmt->bind_param("s", $dareText);
 
-    $sql = "INSERT INTO dare_challenges (dare_text) VALUES ('$dareText')";
-
-    if ($conn->query($sql) === TRUE) {
+    if ($stmt->execute() === TRUE) {
         header("Location: pertanyaan.php");
         exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $stmt->error;
     }
 
+    $stmt->close();
     $conn->close();
 }
 ?>
@@ -31,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Tambah Tantangan</h2>
         <form method="post" action="tambah_tantangan.php">
             <div class="mb-3">
-                <label for="dare_challenges" class="form-label">Tantangan</label>
-                <textarea class="form-control" id="dare_challenges" name="dare_challenges" rows="3"></textarea>
+                <label for="dare_text" class="form-label">Tantangan</label>
+                <textarea class="form-control" id="dare_text" name="dare_text" rows="3" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
