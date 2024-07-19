@@ -28,61 +28,61 @@
                 </div>
                 <div class="modal-body">
                     <p>Selamat datang di game Truth Or Dare</p>
-                    <li>Langkah 1</li>
+                    <li>klik Start game apabila sudah melihat tutorial</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/daftar pertanyaan 17 - Copy.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 2</li>
+                    <li>klik pilih kartu</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/pilih kartu 17 - Copy.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 3</li>
+                    <li>klik Tambahkan pertanyaan lalu input pertanyaan</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/tambah pertanyaan truth 17 - Copy.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 4</li>
+                    <li>klik Edit pertanyaan</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/edit pertanyaan truth 17.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 5</li>
+                    <li>klik Hapus pertanyaan jika ingin tidak di pakai</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/hapus pertanyaan truth 17 - Copy.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 6</li>
+                    <li>Klik icon next lalu pindah ke spin wheel</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/pindah ke halaman spin wheel 17.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 7</li>
+                    <li>klik Input nama Pemain lalu klik tambah pemain</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/input nama pemain spin wheel 17.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 8</li>
+                    <li>klik spin anda akan mendapatkan nama pemain dan pertanyaan</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/putar spin wheel 17 (truth).mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 9</li>
+                    <li>klik icon silang lalu pilih kembali ke halaman pilih kartu</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/kembali ke halaman pilih kartu 17.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <li>Langkah 10</li>
+                    <li>klik icon silang lalu pilih Kembali ke menu awal</li>
                     <div class="embed-responsive embed-responsive-16by9" style="max-width: 400px; max-height: 400px">
                         <video class="embed-responsive-item w-100" controls autoplay muted>
                             <source src="assets/kembali ke menu awal 17.mp4" type="video/mp4">
